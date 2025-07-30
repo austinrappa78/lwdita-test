@@ -1,0 +1,29 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html lang="en"><head><meta charset="UTF-8"><meta name="copyright" content="(C) Copyright 2025"><meta name="generator" content="DITA-OT"><meta name="description" content="Install on on-premises systems for secure local backups."><title>Installing On-Prem Backup</title><link rel="stylesheet" type="text/css" href="../../commonltr.css"></head><body id="install-onprem-backup"><main role="main"><article role="article" aria-labelledby="ariaid-title1">
+  <h1 class="title topictitle1" id="ariaid-title1">Installing <span class="keyword"></span> On-Prem Backup</h1>
+  
+  <div class="body taskbody"><p class="shortdesc">Install <span class="keyword"></span> on on-premises systems for secure local backups.</p>
+    <section class="section context">
+      <p class="p">Choose the appropriate procedure based on your operating system.</p>
+    </section>
+
+    <section><ol class="ol steps"><li class="li step">
+        <span class="ph cmd">Download the Windows installer from <span class="xref"></span>.</span>
+      </li><li class="li step">
+        <span class="ph cmd">Double-click the downloaded `.exe` file to launch the installer.</span>
+      </li><li class="li step">
+        <span class="ph cmd">Follow the installation wizard and select a local backup destination.</span>
+      </li><li class="li step">
+        <span class="ph cmd">Download the Linux installer package (.rpm or .deb) from <span class="xref"></span>.</span>
+      </li><li class="li step">
+        <span class="ph cmd">Open a terminal and run:</span>
+        <pre class="pre codeblock"><code>sudo dpkg -i veracity-agent.deb</code></pre>
+      </li><li class="li step">
+        <span class="ph cmd">Start the backup service with:</span>
+        <pre class="pre codeblock"><code>sudo systemctl start veracity-agent</code></pre>
+      </li></ol></section>
+
+    <div class="note tip note_tip"><span class="note__title">Tip:</span> <div class="note__body">Ensure your firewall settings allow port 443 for secure agent communication.</div></div>
+  </div>
+</article></main></body></html>
