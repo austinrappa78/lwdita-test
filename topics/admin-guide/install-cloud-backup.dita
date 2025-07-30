@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="install-cloud-backup">
+  <title>Installing <keyword keyref="product-name"/> Cloud Backup</title>
+  <shortdesc>Install <keyword keyref="product-name"/> on cloud platforms.</shortdesc>
+  <taskbody>
+    <context>
+      <p audience="admin">These steps are intended for administrators only.</p>
+    </context>
+    <steps platform="cloud">
+      <step>
+        <cmd>Log into the cloud console at <xref keyref="support-url"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Navigate to the Backup section and select <keyword keyref="product-name"/> version <keyword keyref="version"/>.</cmd>
+      </step>
+      <step>
+        <cmd>Click <uicontrol>Install</uicontrol> and follow the prompts to complete setup.</cmd>
+        <note type="tip" audience="user">
+          If you're not an administrator, please contact your IT team to perform the installation.
+        </note>
+      </step>
+    </steps>
+  </taskbody>
+</task>

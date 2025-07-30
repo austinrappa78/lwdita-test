@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="monitor-backup-jobs">
+  <title>Monitoring Backup Jobs</title>
+  <shortdesc>Track the status of active and completed backup operations in <keyword keyref="product-name"/>.</shortdesc>
+
+  <taskbody>
+    <context>
+      <p platform="cloud">
+        Use the <uicontrol>Cloud Dashboard</uicontrol> to monitor job activity in real time.
+        Navigate to <xref keyref="support-url"/> and log in to your administrator account.
+      </p>
+      <p platform="onprem">
+        Use the <uicontrol>On-Prem Monitor</uicontrol> from your local management console.
+        Access it from the <keyword keyref="product-name"/> Control Panel.
+      </p>
+    </context>
+
+    <steps>
+      <step>
+        <cmd>Go to <uicontrol>Job Monitor</uicontrol> in the main navigation.</cmd>
+      </step>
+      <step>
+        <cmd>Filter jobs by status: <i>Running</i>, <i>Completed</i>, or <i>Failed</i>.</cmd>
+      </step>
+      <step>
+        <cmd>Click on a job to view detailed logs and resource usage.</cmd>
+        <note type="note">Both platforms allow exporting job logs for troubleshooting or auditing purposes.</note>
+      </step>
+    </steps>
+  </taskbody>
+</task>

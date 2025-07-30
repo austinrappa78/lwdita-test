@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="manage-users-and-roles">
+  <title>Managing Users and Roles</title>
+  <shortdesc>Control access to <keyword keyref="product-name"/> by managing user accounts and permissions.</shortdesc>
+
+  <taskbody>
+    <context>
+      <p audience="admin">
+        Only users with administrative privileges can manage accounts and assign roles in <keyword keyref="product-name"/>.
+      </p>
+    </context>
+
+    <steps>
+      <step>
+        <cmd>Log in to the <keyword keyref="product-name"/> admin console.</cmd>
+      </step>
+      <step>
+        <cmd>Navigate to <uicontrol>Settings</uicontrol> &gt; <uicontrol>User Management</uicontrol>.</cmd>
+      </step>
+      <step>
+        <cmd>Click <uicontrol>Add User</uicontrol> and enter the user’s details.</cmd>
+      </step>
+      <step>
+        <cmd>Select a role such as <i>Backup Operator</i>, <i>Auditor</i>, or <i>Administrator</i>.</cmd>
+      </step>
+      <step>
+        <cmd>Click <uicontrol>Save</uicontrol> to apply changes.</cmd>
+      </step>
+    </steps>
+
+    <note type="caution" audience="admin">
+      Assigning Administrator roles grants full access to all system settings. Use with caution.
+    </note>
+  </taskbody>
+</task>

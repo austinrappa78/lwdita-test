@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="configure-retention-policies">
+  <title>Configuring Retention Policies</title>
+  <shortdesc>Set data retention periods to match your compliance and storage needs.</shortdesc>
+
+  <conbody>
+    <p>Retention policies determine how long backup data is stored before being purged.</p>
+
+    <p product="enterprise">
+      As an <b>Enterprise</b> user, you can create granular retention rules by workload, location, or policy tag.
+    </p>
+
+    <p product="standard">
+      In the <b>Standard</b> edition, you can choose from predefined policies: <i>30 Days</i>, <i>90 Days</i>, or <i>1 Year</i>.
+    </p>
+
+    <ol>
+      <li>Log in to the <keyword keyref="product-name"/> admin dashboard.</li>
+      <li>Navigate to <uicontrol>Policies</uicontrol> &gt; <uicontrol>Retention</uicontrol>.</li>
+      <li>
+        <p product="enterprise">Click <uicontrol>Create New Policy</uicontrol> and define scope, duration, and deletion rules.</p>
+        <p product="standard">Select one of the predefined retention options and click <uicontrol>Apply</uicontrol>.</p>
+      </li>
+      <li>Click <uicontrol>Save</uicontrol> to finalize your changes.</li>
+    </ol>
+
+    <note type="important">
+      Retention settings directly impact your storage usage and compliance posture.
+    </note>
+  </conbody>
+</concept>

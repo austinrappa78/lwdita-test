@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="admin-guide-intro">
+  <title>Introduction</title>
+  <shortdesc>Welcome to the Veracity Admin Guide. This guide covers installation, configuration, and management of backup solutions for cloud and on-prem environments.</shortdesc>
+  <conbody>
+    <p>This guide provides step-by-step instructions and best practices for administrators using <keyword keyref="product-name"/> version <keyword keyref="version"/>.</p>
+  </conbody>

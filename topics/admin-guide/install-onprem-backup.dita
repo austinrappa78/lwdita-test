@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="install-onprem-backup">
+  <title>Installing <keyword keyref="product-name"/> On-Prem Backup</title>
+  <shortdesc>Install <keyword keyref="product-name"/> on on-premises systems for secure local backups.</shortdesc>
+  <taskbody>
+    <context>
+      <p audience="admin">Choose the appropriate procedure based on your operating system.</p>
+    </context>
+
+    <steps>
+      <!-- Windows steps -->
+      <step platform="onprem" os="windows">
+        <cmd>Download the Windows installer from <xref keyref="support-url"/>.</cmd>
+      </step>
+      <step platform="onprem" os="windows">
+        <cmd>Double-click the downloaded `.exe` file to launch the installer.</cmd>
+      </step>
+      <step platform="onprem" os="windows">
+        <cmd>Follow the installation wizard and select a local backup destination.</cmd>
+      </step>
+
+      <!-- Linux steps -->
+      <step platform="onprem" os="linux">
+        <cmd>Download the Linux installer package (.rpm or .deb) from <xref keyref="support-url"/>.</cmd>
+      </step>
+      <step platform="onprem" os="linux">
+        <cmd>Open a terminal and run:</cmd>
+        <codeblock>sudo dpkg -i veracity-agent.deb</codeblock>
+      </step>
+      <step platform="onprem" os="linux">
+        <cmd>Start the backup service with:</cmd>
+        <codeblock>sudo systemctl start veracity-agent</codeblock>
+      </step>
+    </steps>
+
+    <note type="tip">Ensure your firewall settings allow port 443 for secure agent communication.</note>
+  </taskbody>
+</task>

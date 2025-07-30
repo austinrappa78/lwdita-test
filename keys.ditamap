@@ -1,0 +1,25 @@
+<map>
+  <title>Veracity Admin Guide Keys</title>
+
+  <keydef keys="product-name">
+    <topicmeta>
+      <keywords>
+        <keyword>Veracity</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+
+  <keydef keys="version">
+    <topicmeta>
+      <keywords>
+        <keyword>5.2</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+
+  <keydef keys="support-url">
+    <topicmeta>
+      <linktext>https://support.veracity.io</linktext>
+    </topicmeta>
+  </keydef>
+</map>

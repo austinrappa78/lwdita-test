@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<val>
+  <prop action="include" att="platform" val="onprem"/>
+  <prop action="include" att="os" val="linux"/>
+  <prop action="include" att="audience" val="admin"/>
+  <prop action="exclude" att="platform" val="cloud"/>
+  <prop action="passthrough"/>
+</val>
