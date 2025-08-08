@@ -3,7 +3,14 @@
 <bookmap>
   <booktitle>
     <mainbooktitle>Veracity Admin Guide</mainbooktitle>
+    <booktitlealt>Bringing Cloud Data Management to the Next Level</booktitlealt>
   </booktitle>
+  <summary>This is an abstract</summary>
+  <bookmeta>
+    <bookid>
+      <edition>3.6</edition>
+    </bookid>
+  </bookmeta>
 
   <chapter navtitle="Administration">
     <topicref href="topics/admin-guide/introduction.dita" navtitle="Introduction"/>
