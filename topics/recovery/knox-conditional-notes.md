@@ -2,7 +2,11 @@
 title: Knox Version and Edition-Specific Notes
 ---
 
-## Feature Behavior by Version
+# Feature Behavior by Version {.concept}
+
+Knox Recovery provides different features and capabilities depending on your deployment type, user role, and platform. This topic outlines the key differences and considerations for each configuration to help you understand what functionality is available in your environment.
+
+Use this information to plan your Knox Recovery implementation and ensure you're aware of any limitations or special requirements for your specific setup.
 
 <p product="self-managed">
   Self-managed deployments require manual key rotation every 90 days.
@@ -19,3 +23,11 @@ title: Knox Version and Edition-Specific Notes
 <p audience="user" platform="windows">
   Some features may be unavailable on Windows desktop clients.
 </p>
+
+For optimal performance and security, ensure your Knox Recovery deployment matches the recommended configuration for your environment. Contact Veracity Support if you need assistance determining the best setup for your organization's requirements.
+
+Review the Knox Compatibility Matrix to verify that your current infrastructure meets the minimum requirements for your selected deployment model.
+
+!!! info inline end "Important Deployment Note"
+
+  Knox Recovery features and availability may vary based on your organization's deployment model, user roles, and platform. Review the documentation and compatibility matrix to ensure your environment is configured for optimal security and performance.

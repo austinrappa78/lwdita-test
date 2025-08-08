@@ -2,7 +2,13 @@
 title: Knox Recovery UI Walkthrough
 ---
 
-## Knox Recovery UI Walkthrough
+# Knox Recovery UI Walkthrough
+
+This comprehensive walkthrough guides you through the Knox Recovery user interface, from initial installation to ongoing monitoring. Follow these collapsible sections to complete your Knox Recovery setup and familiarize yourself with key administrative tasks.
+
+The Knox Recovery interface provides intuitive access to backup management, system monitoring, and configuration options. Each section below contains detailed steps and configuration parameters to ensure a successful deployment.
+
+![Homer](../../images/homer.gif)
 
 <details>
 <summary>Step 1: Download and Install</summary>

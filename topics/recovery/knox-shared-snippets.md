@@ -2,7 +2,7 @@
 title: Reusing Knox Procedures and Snippets
 ---
 
-## Adding Active Directory as a Source
+# Adding Active Directory as a Source {.task}
 
 To add Active Directory:
 

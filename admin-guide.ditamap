@@ -13,7 +13,7 @@
   </bookmeta>
 
   <chapter navtitle="Administration">
-    <topicref href="topics/admin-guide/introduction.dita" navtitle="Introduction"/>
+    <topicref href="topics/admin-guide/admin-guide-intro.dita" navtitle="Introduction"/>
     <topicref href="topics/admin-guide/install-cloud-backup.dita" navtitle="Install Cloud Backup"/>
     <topicref href="topics/admin-guide/install-onprem-backup.dita" navtitle="Install On-Prem Backup"/>
     <topicref href="topics/admin-guide/configure-retention-policies.dita" navtitle="Configure Retention Policies"/>
