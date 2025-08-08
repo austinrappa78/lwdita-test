@@ -4,6 +4,8 @@
   <title>Introduction</title>
   <shortdesc>Welcome to the Veracity Admin Guide. This guide covers installation, configuration, and management of backup solutions for cloud and on-prem environments.</shortdesc>
   <conbody>
-    <p>This guide provides step-by-step instructions and best practices for administrators using <keyword keyref="product-name"/> version <keyword keyref="version"/>.</p>
+    <p>This guide provides step-by-step instructions and best practices for administrators using
+        <keyword keyref="product-name"/> version <keyword keyref="version"/>.</p>
+    <p><image href="../../images/client-server-model.png" id="image_xh2_psh_ggc"/></p>
   </conbody>
 </concept>
