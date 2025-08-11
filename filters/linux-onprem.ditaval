@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <val>
   <!-- Classic DITA XML topics -->
-  <prop action="include"  att="platform" val="cloud"/>
-  <prop action="exclude"  att="platform" val="onprem"/>
+  <prop action="include"  att="platform" val="onprem"/>
+  <prop action="exclude"  att="platform" val="cloud"/>
   
   <!-- LwDITA MDITA/HDITA topics -->
-  <prop action="include"  att="props"    val="cloud"/>
-  <prop action="exclude"  att="props"    val="onprem"/>
+  <prop action="include"  att="props"    val="onprem"/>
+  <prop action="exclude"  att="props"    val="cloud"/>
   
-  <!-- Your existing audience/product rules still OK -->
   <prop action="include"  att="audience" val="admin"/>
   <prop action="include"  att="product"  val="enterprise"/>
   

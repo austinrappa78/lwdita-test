@@ -4,13 +4,19 @@
   <title>Installing <keyword keyref="product-name"/> On-Prem Backup</title>
   <shortdesc>Install <keyword keyref="product-name"/> on on-premises systems for secure local backups.</shortdesc>
   <taskbody>
+    
+    <p>Use the agent for all deployments.
+      <ph platform="cloud">This note is for cloud only.</ph>
+      <ph platform="onprem">This note is for on-prem only.</ph>
+    </p>
+    
     <context>
       <p audience="admin">Choose the appropriate procedure based on your operating system.</p>
-    </context>
+    </context>      
 
     <steps>
       <!-- Windows steps -->
-      <step platform="onprem" os="windows">
+      <step platform="windows">
         <cmd>Download the Windows installer from <xref keyref="support-url"/>.</cmd>
       </step>
       <step platform="onprem" os="windows">
@@ -21,7 +27,7 @@
       </step>
 
       <!-- Linux steps -->
-      <step platform="onprem" os="linux">
+      <step platform="linux">
         <cmd>Download the Linux installer package (.rpm or .deb) from <xref keyref="support-url"/>.</cmd>
       </step>
       <step platform="onprem" os="linux">
@@ -30,6 +36,15 @@
       </step>
       <step platform="onprem" os="linux">
         <cmd>Start the backup service with:</cmd>
+        <codeblock>sudo systemctl start veracity-agent</codeblock>
+      </step>
+      
+      <!-- Platform steps -->
+      <step platform="cloud">
+        <cmd>Click <uicontrol>Cloud setup</uicontrol> and follow the wizard.</cmd>
+      </step>
+      <step platform="onprem" os="linux">
+        <cmd>Run:</cmd>
         <codeblock>sudo systemctl start veracity-agent</codeblock>
       </step>
     </steps>

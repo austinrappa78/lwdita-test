@@ -1,5 +1,18 @@
 ---
-title: Installing Knox Recovery
+author:
+  - Ausitn Rappa
+source: Markdown
+publisher: Publisher
+permissions: Permissions
+audience: Users
+category: Category
+keyword:
+  - Keyword1
+  - Keyword2
+resourceid:
+  - Resourceid1
+  - Resourceid2
+workflow: review
 ---
 
 # Steps to Install
@@ -12,6 +25,7 @@ title: Installing Knox Recovery
    ```
 
    !!! note
+   
        Ensure you have the necessary administrative privileges before running the installer. Installing Knox Recovery may require changes to system settings and access to protected directories.
 
 3. Review the following settings before proceeding:

@@ -15,10 +15,10 @@
         <cmd>Navigate to the Backup section and select <keyword keyref="product-name"/> version <keyword keyref="version"/>.</cmd>
       </step>
       <step>
-        <cmd>Click <uicontrol>Install</uicontrol> and follow the prompts to complete setup.</cmd>
         <note type="tip" audience="user">
           If you're not an administrator, please contact your IT team to perform the installation.
         </note>
+        <cmd>Click <uicontrol>Install</uicontrol> and follow the prompts to complete setup.</cmd>
       </step>
     </steps>
   </taskbody>

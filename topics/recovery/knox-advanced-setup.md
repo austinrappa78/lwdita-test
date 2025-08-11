@@ -1,6 +1,18 @@
 ---
-title: Advanced Knox Configuration
-author: Austin Rappa
+author:
+  - Ausitn Rappa
+source: Markdown
+publisher: Publisher
+permissions: Permissions
+audience: Users
+category: Category
+keyword:
+  - Keyword1
+  - Keyword2
+resourceid:
+  - Resourceid1
+  - Resourceid2
+workflow: review
 ---
 
 # Configure Multi-node Deployment

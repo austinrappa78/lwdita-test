@@ -1,5 +1,18 @@
 ---
-title: Knox Recovery UI Walkthrough
+author:
+  - Ausitn Rappa
+source: Markdown
+publisher: Publisher
+permissions: Permissions
+audience: Users
+category: Category
+keyword:
+  - Keyword1
+  - Keyword2
+resourceid:
+  - Resourceid1
+  - Resourceid2
+workflow: review
 ---
 
 # Knox Recovery UI Walkthrough
@@ -7,6 +20,19 @@ title: Knox Recovery UI Walkthrough
 This comprehensive walkthrough guides you through the Knox Recovery user interface, from initial installation to ongoing monitoring. Follow these collapsible sections to complete your Knox Recovery setup and familiarize yourself with key administrative tasks.
 
 The Knox Recovery interface provides intuitive access to backup management, system monitoring, and configuration options. Each section below contains detailed steps and configuration parameters to ensure a successful deployment.
+
+This works everywhere, but
+<span data-props="cloud">this applies to Cloud only</span>.
+
+<div data-props="onprem">
+  This block applies to On-prem only.
+</div>
+
+
+<div data-props="platform=onprem">
+   Follow these steps to configure logging on your appliance…
+</div>
+
 
 ![Homer](../../images/homer.gif)
 

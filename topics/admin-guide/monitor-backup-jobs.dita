@@ -24,8 +24,8 @@
         <cmd>Filter jobs by status: <i>Running</i>, <i>Completed</i>, or <i>Failed</i>.</cmd>
       </step>
       <step>
-        <cmd>Click on a job to view detailed logs and resource usage.</cmd>
         <note type="note">Both platforms allow exporting job logs for troubleshooting or auditing purposes.</note>
+        <cmd>Click on a job to view detailed logs and resource usage.</cmd>        
       </step>
     </steps>
   </taskbody>

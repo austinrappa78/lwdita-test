@@ -1,8 +1,21 @@
 ---
-title: Knox Version and Edition-Specific Notes
+author:
+  - Ausitn Rappa
+source: Markdown
+publisher: Publisher
+permissions: Permissions
+audience: Users
+category: Category
+keyword:
+  - Keyword1
+  - Keyword2
+resourceid:
+  - Resourceid1
+  - Resourceid2
+workflow: review
 ---
 
-# Feature Behavior by Version {.concept}
+# Feature Behavior by Version
 
 Knox Recovery provides different features and capabilities depending on your deployment type, user role, and platform. This topic outlines the key differences and considerations for each configuration to help you understand what functionality is available in your environment.
 

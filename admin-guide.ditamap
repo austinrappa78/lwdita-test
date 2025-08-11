@@ -12,22 +12,23 @@
     </bookid>
   </bookmeta>
 
-  <chapter navtitle="Administration">
-    <topicref href="topics/admin-guide/admin-guide-intro.dita" navtitle="Introduction"/>
-    <topicref href="topics/admin-guide/install-cloud-backup.dita" navtitle="Install Cloud Backup"/>
-    <topicref href="topics/admin-guide/install-onprem-backup.dita" navtitle="Install On-Prem Backup"/>
-    <topicref href="topics/admin-guide/configure-retention-policies.dita" navtitle="Configure Retention Policies"/>
-    <topicref href="topics/admin-guide/manage-users-and-roles.dita" navtitle="Manage Users and Roles"/>
-    <topicref href="topics/admin-guide/monitor-backup-jobs.dita" navtitle="Monitor Backup Jobs"/>
-  </chapter>
-
-    <!-- Recovery Chapter -->
-    <chapter navtitle="Knox Recovery Feature">
-        <topicref href="topics/recovery/knox-installation.md" format="markdown" navtitle="Install Knox Recovery"/>
-        <topicref href="topics/recovery/knox-compatibility-matrix.md" format="markdown" navtitle="Knox Compatibility Matrix"/>
-        <topicref href="topics/recovery/knox-ui-walkthrough.md" format="markdown" navtitle="Knox UI Walkthrough"/>
-        <topicref href="topics/recovery/knox-advanced-setup.md" format="markdown" navtitle="Knox Advanced Setup"/>
-        <topicref href="topics/recovery/knox-conditional-notes.md" format="markdown" navtitle="Knox Conditional Notes"/>
-        <topicref href="topics/recovery/knox-shared-snippets.md" format="markdown" navtitle="Knox Reuse and Snippets"/>
+  <part navtitle="Veracity Administration">
+    <chapter navtitle="Administration">
+      <topicref href="topics/admin-guide/admin-guide-intro.dita" navtitle="Introduction"/>
+      <topicref href="topics/admin-guide/install-cloud-backup.dita" navtitle="Install Cloud Backup"/>
+      <topicref href="topics/admin-guide/install-onprem-backup.dita" navtitle="Install On-Prem Backup"/>
+      <topicref href="topics/admin-guide/configure-retention-policies.dita" navtitle="Configure Retention Policies"/>
+      <topicref href="topics/admin-guide/manage-users-and-roles.dita" navtitle="Manage Users and Roles"/>
+      <topicref href="topics/admin-guide/monitor-backup-jobs.dita" navtitle="Monitor Backup Jobs"/>
     </chapter>
+
+    <chapter navtitle="Knox Recovery Feature">
+      <topicref href="topics/recovery/knox-installation.md" format="mdita" navtitle="Install Knox Recovery"/>
+      <topicref href="topics/recovery/knox-compatibility-matrix.md" format="mdita" navtitle="Knox Compatibility Matrix"/>
+      <topicref href="topics/recovery/knox-ui-walkthrough.md" format="mdita" navtitle="Knox UI Walkthrough"/>
+      <topicref href="topics/recovery/knox-advanced-setup.md" format="mdita" navtitle="Knox Advanced Setup"/>
+      <topicref href="topics/recovery/knox-conditional-notes.md" format="mdita" navtitle="Knox Conditional Notes"/>
+      <topicref href="topics/recovery/knox-shared-snippets.md" format="mdita" navtitle="Knox Reuse and Snippets"/>
+    </chapter>
+  </part>
 </bookmap>
