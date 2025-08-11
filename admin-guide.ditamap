@@ -25,6 +25,7 @@
     <chapter navtitle="Knox Recovery Feature">
         <topicref href="topics/recovery/knox-installation.md" format="markdown" navtitle="Install Knox Recovery"/>
         <topicref href="topics/recovery/knox-compatibility-matrix.md" format="markdown" navtitle="Knox Compatibility Matrix"/>
+        <topicref href="topics/recovery/knox-ui-walkthrough.md" format="markdown" navtitle="Knox UI Walkthrough"/>
         <topicref href="topics/recovery/knox-advanced-setup.md" format="markdown" navtitle="Knox Advanced Setup"/>
         <topicref href="topics/recovery/knox-conditional-notes.md" format="markdown" navtitle="Knox Conditional Notes"/>
         <topicref href="topics/recovery/knox-shared-snippets.md" format="markdown" navtitle="Knox Reuse and Snippets"/>
