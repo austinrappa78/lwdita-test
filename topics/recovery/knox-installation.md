@@ -24,4 +24,4 @@ title: Installing Knox Recovery
 
 4. Continue with the installation process.
 
-![Cybersecurity knowledge graph](../../images/cybersecurity-knowledge-graph.png)
+   ![Cybersecurity knowledge graph](../../images/cybersecurity-knowledge-graph.png)

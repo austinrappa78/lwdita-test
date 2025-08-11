@@ -23,12 +23,15 @@ dita -i admin-guide.ditamap -f html5 -o out/html/admin-guide
 | 3 | Nested Steps / Sub-Procedures | ✅ Yes | ✅ Yes (`<substeps>` in `<step>`, nested lists) | [knox-advanced-setup.md](topics/recovery/knox-advanced-setup.md) (multi-level bullets) |
 | 4 | Conditional Content / Output Filtering | ✅ Yes | ✅ Yes (profiling attributes: product, audience, platform, etc.) | [knox-conditional-notes.md](topics/recovery/knox-conditional-notes.md), DITA topics with profiling attributes |
 | 5 | Modular Topic Referencing (Reusability) | ✅ Yes | ✅ Yes (`<conref>`, `<keyref>`, `<topicref>`) | [knox-shared-snippets.md](topics/recovery/knox-shared-snippets.md), DITA maps |
-| 6 | Rich Inline Elements | ✅ Yes | ✅ Yes (`<note>`, `<codeph>`, `<uicontrol>`, `<b>`, `<i>`) | All topics (inline notes, code, UI formatting, bold/italic) |
-| 7 | Inline Hyperlinks | ✅ Yes | ✅ Yes (`<xref>`) | [knox-installation.md](topics/recovery/knox-installation.md) |
-| 8 | Inline GIFs | ✅ Yes | ✅ Yes (`<image>`) |  [knox-ui-walkthrough.md](topics/recovery/knox-ui-walkthrough.md) |
-| 9 | Inline Images | ✅ Yes | ✅ Yes (`<image>`) |  [knox-installation.md](topics/recovery/knox-installation.md) |
-| 10 | Inline Tables | ✅ Yes | ✅ Yes (`<table>`) | [knox-installation.md](topics/recovery/knox-installation.md) |
-| 11 | Integrated Walkthroughs/Multi-Panel Layouts | ⚠️ Possible | ⚠️ Possible | *Not a CMS function* This is a final output function [but is possible](https://github.com/austinrappa78/lwdita-test/blob/main/topics/recovery/knox-ui-walkthrough.md) |
-| 12 | Output Support for Mixed Formats | ✅ Yes | ✅ Yes (DITA-OT supports HTML5, PDF, JSON/XML with plugins) | Workspace setup (DITA-OT, Markdown+DITA XML) |
+| 6 | Inline Notes/Tips/Warnings | ✅ Yes | ✅ Yes (`<note>`) | All topics (inline notes, tips, warnings) |
+| 7 | Inline Code Snippets | ✅ Yes | ✅ Yes (`<codeph>`) | [knox-advanced-setup.md](topics/recovery/knox-advanced-setup.md) |
+| 8 | UI Element Formatting (Menu > Option) | ✅ Yes | ✅ Yes (`<uicontrol>`) | [knox-advanced-setup.md](topics/recovery/knox-advanced-setup.md) |
+| 9 | Bold/Italic Combo Styling for Labels/Buttons | ✅ Yes | ✅ Yes (`<b>`, `<i>`) | All topics (bold/italic for labels/buttons) |
+| 10 | Inline Hyperlinks | ✅ Yes | ✅ Yes (`<xref>`) | [knox-installation.md](topics/recovery/knox-installation.md) |
+| 11 | Inline GIFs | ✅ Yes | ✅ Yes (`<image>`) |  [knox-ui-walkthrough.md](topics/recovery/knox-ui-walkthrough.md) |
+| 12 | Inline Images | ✅ Yes | ✅ Yes (`<image>`) |  [knox-installation.md](topics/recovery/knox-installation.md) |
+| 13 | Inline Tables | ✅ Yes | ✅ Yes (`<table>`) | [knox-installation.md](topics/recovery/knox-installation.md) |
+| 14 | Integrated Walkthroughs/Multi-Panel Layouts | ⚠️ Possible | ⚠️ Possible | *Not a CMS function* This is a final output function [but is possible](https://github.com/austinrappa78/lwdita-test/blob/main/topics/recovery/knox-ui-walkthrough.md) |
+| 15 | Output Support for Mixed Formats | ✅ Yes | ✅ Yes (DITA-OT supports HTML5, PDF, JSON/XML with plugins) | Workspace setup (DITA-OT, Markdown+DITA XML) |
 
 ---

@@ -23,8 +23,8 @@ For Windows environments, additional configuration steps are required to ensure 
    ```
 2. Set up Windows Service dependencies:
    - Open **Services.msc**
-   - Navigate to **Knox Recovery Service**
-   - Set dependency on **Network Location Awareness**
+   - Navigate to **Settings** **>** **Knox Recovery Service**
+   - Set dependency on **_Network Location Awareness_**
 3. Configure registry settings for cluster timeouts:
    ```
    HKEY_LOCAL_MACHINE\SOFTWARE\Veracity\Knox\ClusterTimeout = 30000
