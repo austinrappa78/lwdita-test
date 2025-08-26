@@ -20,6 +20,74 @@
         </note>
         <cmd>Click <uicontrol>Install</uicontrol> and follow the prompts to complete setup.</cmd>
       </step>
+<step>
+  <cmd>In the <uicontrol>Settings</uicontrol> section, perform the following:</cmd>
+  <info>
+    <ol id="ol_ubw_fyh_lgc">
+      <li>Under <uicontrol>Scan Schedule</uicontrol>, from the
+          <uicontrol>Scheduled</uicontrol> drop-down, select <uicontrol>Once</uicontrol> to
+        perform a scan immediately.</li>
+      <li>Under <uicontrol>Method</uicontrol>, by default a Full Scan is performed for every scan,
+              select the enhanced scan option, if available, if you want to perform an optimized
+              scan as part of the process.<note id="note_dkp_wyh_lgc" type="note">Ensure that you
+                review and understand the usage considerations before you use it.</note><image
+                href="../../images/mockup-settings-scan-schedule.png" id="image_kdf_5f3_lgc"/></li>
+    </ol>
+  </info>
+</step>
+      <step>
+        <cmd>Possible scan shedules based on operating system</cmd>
+        <info>
+          <table frame="all" rowsep="1" colsep="1" id="table_kqt_1g3_lgc">
+            <title>Scan Schedules By Operating System</title>
+            <tgroup cols="2">
+              <colspec colnum="1" colname="c1" colwidth="1*"/>
+              <colspec colnum="2" colname="c2" colwidth="1*"/>
+              <thead>
+                <row>
+                  <entry>OS</entry>
+                  <entry/>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>win_x64</entry>
+                  <entry>
+                    <ul id="ul_zx4_dg3_lgc">
+                      <li>Once</li>
+                      <li>Twice</li>
+                      <li>Three Times a Lady</li>
+                    </ul>
+                  </entry>
+                </row>
+                <row>
+                  <entry>linux</entry>
+                  <entry>
+                    <ul id="ul_vhd_fg3_lgc">
+                      <li>One</li>
+                      <li>Two</li>
+                      <li>Three</li>
+                      <li>Four</li>
+                      <li>Get your woman on the floor</li>
+                    </ul>
+                  </entry>
+                </row>
+                <row>
+                  <entry>aix</entry>
+                  <entry>
+                    <ul id="ul_dtw_gg3_lgc">
+                      <li>One for the money</li>
+                      <li>Two for the show</li>
+                      <li>Three to get ready</li>
+                      <li>Now go cat go</li>
+                    </ul>
+                  </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </info>
+      </step>
     </steps>
   </taskbody>
 </task>
