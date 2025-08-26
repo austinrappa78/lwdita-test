@@ -65,5 +65,3 @@ This works everywhere, but
 - Export logs for troubleshooting.
 
 </details>
-
-<!-- For tabs, you can use HTML or a Markdown extension if your output supports it. -->
