@@ -4,14 +4,9 @@
   <title>Installing <keyword keyref="product-name"/> On-Prem Backup</title>
   <shortdesc>Install <keyword keyref="product-name"/> on on-premises systems for secure local backups.</shortdesc>
   <taskbody>
-    
-    <p>Use the agent for all deployments.
-      <ph platform="cloud">This note is for cloud only.</ph>
+    <context id="context_oks_f3q_lgc">Use the agent for all deployments. <ph platform="cloud">This
+        note is for cloud only.</ph>
       <ph platform="onprem">This note is for on-prem only.</ph>
-    </p>
-    
-    <context>
-      <p audience="admin">Choose the appropriate procedure based on your operating system.</p>
     </context>      
 
     <steps>
@@ -19,60 +14,57 @@
       <step platform="windows">
         <cmd>Download the Windows installer from <xref keyref="support-url"/>.</cmd>
       </step>
-      <step platform="onprem" os="windows">
+      <step platform="onprem">
         <cmd>Double-click the downloaded `.exe` file to launch the installer.</cmd>
       </step>
-      <step platform="onprem" os="windows">
+      <step platform="onprem">
         <cmd>Follow the installation wizard and select a local backup destination.</cmd>
       </step>
 
       <!-- Version-specific Windows steps using product attribute -->
-      <step platform="onprem" os="windows" product="v7.3">
-        <cmd>For version 7.3: Run the legacy configuration utility:</cmd>
-        <codeblock>C:\Program Files\Veracity\bin\config-legacy.exe</codeblock>
+      <step platform="onprem" product="v7.3">
+        <cmd>For version 7.3: Run the legacy configuration utility: <codeph>C:\Program
+            Files\Veracity\bin\config-legacy.exe</codeph></cmd>
       </step>
-      <step platform="onprem" os="windows" product="v7.5">
-        <cmd>For version 7.5: Use the new unified configuration tool:</cmd>
-        <codeblock>C:\Program Files\Veracity\bin\veracity-config.exe --setup</codeblock>
+      <step platform="onprem" product="v7.5">
+        <cmd>For version 7.5: Use the new unified configuration tool: <codeph>C:\Program
+            Files\Veracity\bin\veracity-config.exe --setup</codeph></cmd>
       </step>
 
       <!-- Linux steps -->
       <step platform="linux">
         <cmd>Download the Linux installer package (.rpm or .deb) from <xref keyref="support-url"/>.</cmd>
       </step>
-      <step platform="onprem" os="linux">
-        <cmd>Open a terminal and run:</cmd>
-        <codeblock>sudo dpkg -i veracity-agent.deb</codeblock>
+      <step platform="onprem">
+        <cmd>Open a terminal and run: <codeph>sudo dpkg -i veracity-agent.deb</codeph></cmd>
       </step>
-      <step platform="onprem" os="linux">
-        <cmd>Start the backup service with:</cmd>
-        <codeblock>sudo systemctl start veracity-agent</codeblock>
+      <step platform="onprem">
+        <cmd>Start the backup service with: <codeph>sudo systemctl start
+          veracity-agent</codeph></cmd>
       </step>
 
       <!-- Version-specific Linux steps using product attribute -->
-      <step platform="onprem" os="linux" product="v7.3">
-        <cmd>For version 7.3: Configure the legacy SSL settings:</cmd>
-        <codeblock>sudo /opt/veracity/bin/setup-ssl-legacy.sh</codeblock>
+      <step platform="onprem" product="v7.3">
+        <cmd>For version 7.3: Configure the legacy SSL settings: <codeph>sudo
+            /opt/veracity/bin/setup-ssl-legacy.sh</codeph></cmd>
       </step>
-      <step platform="onprem" os="linux" product="v7.5">
-        <cmd>For version 7.5: Enable the new auto-SSL feature:</cmd>
-        <codeblock>sudo /opt/veracity/bin/enable-auto-ssl.sh</codeblock>
+      <step platform="onprem" product="v7.5">
+        <cmd>For version 7.5: Enable the new auto-SSL feature: <codeph>sudo
+            /opt/veracity/bin/enable-auto-ssl.sh</codeph></cmd>
       </step>
       
       <!-- Platform steps -->
       <step platform="cloud">
         <cmd>Click <uicontrol>Cloud setup</uicontrol> and follow the wizard.</cmd>
       </step>
-      <step platform="onprem" os="linux">
-        <cmd>Run:</cmd>
-        <codeblock>sudo systemctl start veracity-agent</codeblock>
+      <step platform="onprem">
+        <cmd>Run: <codeph>sudo systemctl start veracity-agent</codeph></cmd>
       </step>
-      <step platform="onprem" os="linux">
-        <cmd>If you need to mount an ISO for additional software installation:</cmd>
-        <codeblock conref="../shared/mount-iso.dita#mount-iso/mount_command"/>
+      <step platform="onprem">
+        <cmd>If you need to mount an ISO for additional software installation:<codeph/></cmd>
       </step>
     </steps>
-
-    <note type="tip">Ensure your firewall settings allow port 443 for secure agent communication.</note>
+    <result id="result_trr_k3q_lgc">There is an output.<note type="tip" id="note_uwq_l3q_lgc">Ensure
+        your firewall settings allow port 443 for secure agent communication.</note></result>
   </taskbody>
 </task>
