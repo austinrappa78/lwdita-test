@@ -69,11 +69,10 @@
                       <li>Three</li>
                       <li>Four</li>
                       <li>Get your woman on the floor</li>
+                      <li><image href="../../images/coolio.jpg" id="coolio">
+                          <alt>Coolio</alt>
+                        </image></li>
                     </ul>
-                    <p>Linux configuration example:</p>
-                    <image href="../../images/coolio.jpg" id="coolio">
-                      <alt>Coolio</alt>
-                    </image>
                   </entry>
                 </row>
                 <row>
