@@ -70,6 +70,10 @@
                       <li>Four</li>
                       <li>Get your woman on the floor</li>
                     </ul>
+                    <p>Linux configuration example:</p>
+                    <image href="../../images/coolio.jpg" id="coolio">
+                      <alt>Coolio</alt>
+                    </image>
                   </entry>
                 </row>
                 <row>
@@ -80,6 +84,7 @@
                       <li>Two for the show</li>
                       <li>Three to get ready</li>
                       <li>Now go cat go</li>
+                      <li>For more information, visit <xref href="https://www.google.com" scope="external" format="html">Google</xref></li>
                     </ul>
                   </entry>
                 </row>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<val>
+  <!-- Platform filtering -->
+  <prop action="include"  att="platform" val="onprem"/>
+  <prop action="exclude"  att="platform" val="cloud"/>
+  
+  <!-- Version filtering using product attribute -->
+  <prop action="include"  att="product"  val="v7.3"/>
+  <prop action="exclude"  att="product"  val="v7.5"/>
+  <prop action="include"  att="product"  val="enterprise"/>
+  
+  <!-- Existing rules -->
+  <prop action="include"  att="audience" val="admin"/>
+  
+  <prop action="passthrough"/>
+</val>

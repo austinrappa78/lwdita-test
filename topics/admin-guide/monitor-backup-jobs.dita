@@ -27,6 +27,10 @@
         <note type="note">Both platforms allow exporting job logs for troubleshooting or auditing purposes.</note>
         <cmd>Click on a job to view detailed logs and resource usage.</cmd>        
       </step>
+      <step>
+        <cmd>If you need to mount an ISO for recovery purposes:</cmd>
+        <codeblock conref="../shared/mount-iso.dita#mount-iso/step_2_codeblock"/>
+      </step>
     </steps>
   </taskbody>
 </task>

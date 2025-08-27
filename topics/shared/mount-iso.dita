@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="mount-iso">
+  <title>Mount ISO Procedure</title>
+  <shortdesc>Mount an ISO file in Knox for accessing installation media or archived data.</shortdesc>
+  
+  <taskbody>
+    <context>
+      <p>Use this procedure to mount ISO files on Knox servers for installation or data access purposes.</p>
+    </context>
+    
+    <steps>
+      <step>
+        <cmd>Upload the ISO to the Knox server using SCP or your preferred method.</cmd>
+      </step>
+      <step>
+        <cmd>Run the following command to mount the ISO:</cmd>
+        <codeblock id="mount_command">sudo mount -o loop /path/to/iso /mnt/iso</codeblock>
+      </step>
+      <step>
+        <cmd>Verify that the ISO contents are accessible:</cmd>
+        <codeblock id="verify_command">ls /mnt/iso</codeblock>
+      </step>
+    </steps>
+    
+    <result>
+      <p id="mount_result">The ISO file is now mounted and its contents are accessible at <filepath>/mnt/iso</filepath>.</p>
+    </result>
+    
+    <postreq>
+      <p id="unmount_info">When finished, unmount the ISO using:</p>
+      <codeblock id="unmount_command">[AUSTIN REUSE] sudo umount /mnt/iso</codeblock>
+    </postreq>
+  </taskbody>
+</task>

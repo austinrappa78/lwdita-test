@@ -26,6 +26,16 @@
         <cmd>Follow the installation wizard and select a local backup destination.</cmd>
       </step>
 
+      <!-- Version-specific Windows steps using product attribute -->
+      <step platform="onprem" os="windows" product="v7.3">
+        <cmd>For version 7.3: Run the legacy configuration utility:</cmd>
+        <codeblock>C:\Program Files\Veracity\bin\config-legacy.exe</codeblock>
+      </step>
+      <step platform="onprem" os="windows" product="v7.5">
+        <cmd>For version 7.5: Use the new unified configuration tool:</cmd>
+        <codeblock>C:\Program Files\Veracity\bin\veracity-config.exe --setup</codeblock>
+      </step>
+
       <!-- Linux steps -->
       <step platform="linux">
         <cmd>Download the Linux installer package (.rpm or .deb) from <xref keyref="support-url"/>.</cmd>
@@ -38,6 +48,16 @@
         <cmd>Start the backup service with:</cmd>
         <codeblock>sudo systemctl start veracity-agent</codeblock>
       </step>
+
+      <!-- Version-specific Linux steps using product attribute -->
+      <step platform="onprem" os="linux" product="v7.3">
+        <cmd>For version 7.3: Configure the legacy SSL settings:</cmd>
+        <codeblock>sudo /opt/veracity/bin/setup-ssl-legacy.sh</codeblock>
+      </step>
+      <step platform="onprem" os="linux" product="v7.5">
+        <cmd>For version 7.5: Enable the new auto-SSL feature:</cmd>
+        <codeblock>sudo /opt/veracity/bin/enable-auto-ssl.sh</codeblock>
+      </step>
       
       <!-- Platform steps -->
       <step platform="cloud">
@@ -46,6 +66,10 @@
       <step platform="onprem" os="linux">
         <cmd>Run:</cmd>
         <codeblock>sudo systemctl start veracity-agent</codeblock>
+      </step>
+      <step platform="onprem" os="linux">
+        <cmd>If you need to mount an ISO for additional software installation:</cmd>
+        <codeblock conref="../shared/mount-iso.dita#mount-iso/mount_command"/>
       </step>
     </steps>
 

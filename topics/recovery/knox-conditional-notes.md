@@ -37,7 +37,40 @@ Use this information to plan your Knox Recovery implementation and ensure you're
   Some features may be unavailable on Windows desktop clients.
 </p>
 
+<p product="v7.3">
+  Version 7.3 includes legacy backup encryption using AES-128. Manual certificate renewal required every 6 months.
+</p>
+
+<p product="v7.5">
+  Version 7.5 introduces enhanced encryption with AES-256 and automatic certificate management through Knox Vault.
+</p>
+
+<p product="v7.3" audience="admin">
+  Administrators using v7.3 must run the legacy health check utility monthly:
+  <code>knox-healthcheck --legacy-mode</code>
+</p>
+
+<p product="v7.5" audience="admin">
+  Administrators can now use the new unified dashboard for real-time monitoring and automated health checks.
+</p>
+
+<p product="v7.3" platform="linux">
+  Linux deployments on v7.3 require manual log rotation configuration in <code>/etc/knox/logrotate.conf</code>.
+</p>
+
+<p product="v7.5" platform="linux">
+  Linux deployments on v7.5 include automatic log management with configurable retention policies.
+</p>
+
 For optimal performance and security, ensure your Knox Recovery deployment matches the recommended configuration for your environment. Contact Veracity Support if you need assistance determining the best setup for your organization's requirements.
+
+<p product="v7.3">
+  **Version 7.3 End-of-Life Notice**: Support for Knox Recovery v7.3 will end December 2025. Plan your migration to v7.5 or later.
+</p>
+
+<p product="v7.5">
+  **New in v7.5**: Enhanced disaster recovery capabilities with cross-region failover and zero-downtime updates.
+</p>
 
 Review the Knox Compatibility Matrix to verify that your current infrastructure meets the minimum requirements for your selected deployment model.
 
