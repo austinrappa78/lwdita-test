@@ -24,9 +24,22 @@
   <cmd>In the <uicontrol>Settings</uicontrol> section, perform the following:</cmd>
   <info>
     <ol id="ol_ubw_fyh_lgc">
-      <li>Under <uicontrol>Scan Schedule</uicontrol>, from the
-          <uicontrol>Scheduled</uicontrol> drop-down, select <uicontrol>Once</uicontrol> to
-        perform a scan immediately.</li>
+      <li>Under <uicontrol>Scan Schedule</uicontrol>, from the <uicontrol>Scheduled</uicontrol>
+              drop-down, select <uicontrol>Once</uicontrol> to perform a scan immediately.<ul
+                id="ul_qlc_jqw_lgc">
+                <li>Die Hard</li>
+                <li>Star Wars<ol id="ol_aby_lqw_lgc">
+                    <li>The Phantom Menace</li>
+                    <li>Attack of the Clones</li>
+                    <li>Revenge of the Sith</li>
+                    <li>Empire Strikes Back</li>
+                    <li>Return of the Jedi</li>
+                    <li>The Force Awakens</li>
+                    <li>The Last Jedi</li>
+                    <li>The Rise of Skywalker</li>
+                  </ol></li>
+                <li>The Matrix</li>
+              </ul></li>
       <li>Under <uicontrol>Method</uicontrol>, by default a Full Scan is performed for every scan,
               select the enhanced scan option, if available, if you want to perform an optimized
               scan as part of the process.<note id="note_dkp_wyh_lgc" type="note">Ensure that you
