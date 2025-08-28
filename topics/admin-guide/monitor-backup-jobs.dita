@@ -29,9 +29,8 @@
       </step>
       <step>
         <cmd>If you need to mount an ISO for recovery purposes:</cmd>
-        <info>
-          <codeblock conref="../shared/mount-iso.dita#mount-iso/unmount_command" id="codeblock_gbw_hhq_lgc"/>
-        </info>
+        <info><codeblock conref="../shared/mount-iso.dita#mount-iso/unmount_command" id="codeblock_gbw_hhq_lgc"/><image
+            href="../../images/homer.gif" id="image_pyl_r3y_lgc"/></info>
       </step>
     </steps>
   </taskbody>
