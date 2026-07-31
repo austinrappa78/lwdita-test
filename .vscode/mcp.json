@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "pelcrow": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${workspaceFolder}/api/dist/mcp/stdio.js"],
+      "env": {
+        "PELCROW_CONFIG": "${workspaceFolder}/pelcrow.config.json"
+      }
+    }
+  }
+}

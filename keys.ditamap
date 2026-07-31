@@ -17,9 +17,9 @@
     </topicmeta>
   </keydef>
 
-  <keydef keys="support-url">
+  <keydef keys="support-url" href="https://support.veracity.io" scope="external" format="html">
     <topicmeta>
-      <linktext>https://support.veracity.io</linktext>
+      <linktext>Veracity Support</linktext>
     </topicmeta>
   </keydef>
 </map>

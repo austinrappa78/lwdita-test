@@ -12,6 +12,8 @@
     </bookid>
   </bookmeta>
 
+  <mapref href="keys.ditamap" format="ditamap" processing-role="resource-only"/>
+
   <part navtitle="Veracity Administration">
     <chapter navtitle="Administration">
       <topicref href="topics/admin-guide/admin-guide-intro.dita" navtitle="Introduction"/>
