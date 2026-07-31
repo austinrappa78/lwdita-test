@@ -28,6 +28,7 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 
 Every document's YAML frontmatter must set: title, status, owner, audience, platform.
 The migration placeholders title: 'Untitled Document' and owner: 'unassigned' must be replaced before commit; the validation gate rejects them on strictly tracked files.
+This list is managed centrally (org settings), not edited per-repo. `.pelcrow/config.json` in this repository is a **read-only synced copy** of it, kept here for visibility — regenerated from the source of truth on every push, so hand-editing it has no effect and any edits will be silently overwritten.
 **Don't guess `owner`.** A person named in an email, ticket, or spec (reporter, requester, stakeholder) is not automatically the document's owner. `file_with_provenance` overwrites this field with the operator's own git identity at commit time regardless of what you put there, so leave it as the placeholder value rather than inventing a plausible-looking name from the source material.
 
 ## Validation Gate (hard failures)
