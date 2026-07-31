@@ -35,8 +35,11 @@ The migration placeholders title: 'Untitled Document' and owner: 'unassigned' mu
 - **Transclusion cycles**: reuse loops (A → B → A) are forbidden.
 - **Missing metadata**: required frontmatter fields must be present (see Mandatory Metadata).
 - **Malformed frontmatter**: YAML that fails to parse is rejected.
+- **Banned terminology**: any term in the organization's termbase is flagged with its preferred replacement.
 
 HTML elements inside fenced code blocks are treated as literal example code and are never indexed as live references.
+
+**This is not optional and it is not this document asking nicely.** Every commit to this repository — filed through `file_with_provenance`, written by hand, or produced by a tool that never called any Pelcrow MCP tool — is re-validated against these exact rules before it can merge. Calling `validate_draft`/`check_terminology` while drafting only changes when you find out about a problem, not whether it will be caught. Treat a hard failure here as equivalent to a failing test blocking a merge, because that is what it is.
 
 ## Indexed Repositories
 
