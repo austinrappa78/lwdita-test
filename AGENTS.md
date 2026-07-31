@@ -51,6 +51,14 @@ _No keys defined yet._
 - **Hands off the local DITA-OT installation**: do NOT install, uninstall, reinstall, reintegrate, or edit any file inside a local DITA-OT installation (`DITA_HOME`/`DITA_OT` paths). The toolkit setup is managed by the user.
 - **Windows invocation**: always use `dita.bat` when running builds under Windows/git-bash; the Unix `bin/dita` script produces classpath resolution errors on Windows.
 
+## MCP Integration (Crucial)
+
+**You MUST connect to and use the Pelcrow MCP server.** This repository is part of a larger, interconnected content graph managed by Pelcrow. If you are an AI assistant editing this content:
+
+- **Do not guess or hallucinate.** You must use the `search_keys` and `resolve_key` MCP tools to find existing variables, topics, and snippets.
+- **Validate before you save.** Before presenting a final plan or running a git commit, you must run your proposed changes through the `validate_draft` tool.
+- **Respect terminology.** Use the `check_terminology` tool to ensure compliance with the organization's style guide.
+
 <!-- pelcrow:managed:end -->
 
 ## Customer Rules
