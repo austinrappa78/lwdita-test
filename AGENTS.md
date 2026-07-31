@@ -11,7 +11,7 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 1. **Search before writing**: query the content index (`search_keys`, `resolve_key`) before drafting. Never rewrite content that already exists.
 2. **Reuse keys, not paths**: everything is addressed by namespaced key (`repo:key`), never by file path. Include shared passages by referencing their key.
 3. **Never invent factual variables**: product names, version numbers, URLs, and environment flags must be referenced via keyrefs — never guessed or hardcoded.
-4. **Record provenance**: every new or updated document must record its source (commit SHA, ticket, PR, or specification document).
+4. **Record provenance**: every new or updated document must cite what produced it in a frontmatter `sources:` list (plural — not `source:`) — one or more opaque IDs such as `commit:abc123`, `ticket:JIRA-42`, or a spec name/URL. This is what staleness tracking keys off; a document with no `sources:` entry, or the wrong field name, can never be flagged stale when its source changes.
 5. **Check before filing**: run every draft through `validate_draft` before committing content — this already includes terminology checking. Use `check_terminology` on its own to check a smaller piece of text (before it's assembled into a full draft) for banned/avoid terms and their preferred replacements.
 
 ## MDITA Authoring Syntax
