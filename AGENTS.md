@@ -17,6 +17,14 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 7. **Look up ticket references yourself, don't trust a paraphrase**: Pelcrow has no access to any issue-tracker system (Jira, Linear, GitHub Issues, etc.) — if the task mentions a ticket ID that will end up in `sources:` as `ticket:ID`, and a ticket-tracker MCP server is also available to you in this session, search it directly for that ticket's actual current title, description, and status before drafting. A secondhand summary pasted into the conversation can be stale, incomplete, or wrong; the ticket itself is the source of truth you're citing.
 8. **Search for a ticket before assuming there isn't one**: if you're asked to draft something without a ticket ID being named, and a ticket-tracker MCP server is available, search it for anything that plausibly matches the topic before you start — don't just proceed source-less because none was handed to you. If you find a real candidate, confirm with the user which one (if any) applies before citing it; never guess an ID. If nothing plausible turns up, or no tracker is available, that's fine — `sources:` accepts `commit:`, `spec:`, or a URL just as well, and a ticket citation specifically is never mandatory.
 
+## Repository and Write Boundary
+
+- **Destination repository**: the repository containing this `AGENTS.md` is the destination repository for authored content. Resolve every relative output path from this repository root, not from the location of an email, ticket export, specification, attachment, or other source document.
+- **Write boundary**: create or update documentation only inside this destination repository unless the user explicitly names a different destination repository. Before writing, resolve the proposed path and verify that it remains inside this repository; if it does not, stop and correct the path.
+- **External sources are read-only**: source material may live in Downloads, Documents, Jira, Confluence, another repository, or any other readable location. Reading a source never authorizes writing beside it, and its directory structure must never determine the output directory.
+- **Follow the destination structure**: inspect this repository's maps and existing content hierarchy before choosing a path. In a DITA/MDITA repository that already uses a `topics/` hierarchy, place new authored topics under the appropriate `topics/<subject>/` subfolder in this repository.
+- **Keep provenance separate from placement**: cite external inputs in `sources:` metadata, but keep the authored document in the destination repository's content hierarchy.
+
 ## MDITA Authoring Syntax
 
 - **Variable**: `<span data-keyref="repo:key"></span>` (optional literal fallback text inside the span).
@@ -66,6 +74,131 @@ _No keys defined yet._
 - **Do not guess or hallucinate.** You must use the `search_keys` and `resolve_key` MCP tools to find existing variables, topics, and snippets.
 - **Validate before you save.** Before presenting a final plan or running a git commit, you must run your proposed changes through the `validate_draft` tool.
 - **Respect terminology.** Use the `check_terminology` tool to ensure compliance with the organization's style guide.
+
+## Organization Writing Guide
+
+**Guide: Technical documentation**
+
+Clear, consistent guidance for product documentation.
+
+### Voice & tone
+
+#### Use a direct, helpful tone (warning)
+
+Address the reader as “you.” Use a neutral, direct, and helpful tone. Avoid “simply,” “obviously,” and “just” when describing a task.
+
+**Use:**
+
+```markdown
+Select Save to apply your changes.
+```
+
+**Avoid:**
+
+```markdown
+Obviously, the user should simply click Save.
+```
+
+### Headings
+
+#### Use sentence case for headings (required)
+
+Write headings in sentence case. Capitalize only the first word and proper nouns. Do not end headings with a period.
+
+**Use:**
+
+```markdown
+Configure retention policies
+```
+
+**Avoid:**
+
+```markdown
+Configure Retention Policies.
+```
+
+### Procedures
+
+#### Start steps with an action (required)
+
+Start each procedure step with an imperative verb and keep one primary action in each step. Use numbered lists for sequential actions.
+
+**Use:**
+
+```markdown
+1. Open the Settings page.
+```
+
+**Avoid:**
+
+```markdown
+1. The Settings page should be opened.
+```
+
+### Notes
+
+#### Use one note format (required)
+
+Format notes as a GitHub-style admonition with an uppercase label. Use only NOTE, TIP, IMPORTANT, CAUTION, or WARNING.
+
+**Use:**
+
+```markdown
+> [!NOTE]
+> Restart the service for the change to take effect.
+```
+
+**Avoid:**
+
+```markdown
+**Note:** Restart the service.
+```
+
+### Tables
+
+#### Keep tables consistent (required)
+
+Introduce each table with a complete sentence. Include a non-empty header row, use sentence case for headers, and left-align text columns.
+
+**Use:**
+
+```markdown
+The following table lists the available settings.
+
+| Setting | Description |
+|:--|:--|
+```
+
+**Avoid:**
+
+```markdown
+| SETTING | DESCRIPTION |
+|:-:|:-:|
+```
+
+### Lists
+
+#### Use parallel list items (warning)
+
+Begin items in the same list with the same grammatical form. Use bullets for nonsequential information and numbers for sequential actions.
+
+### Accessibility
+
+#### Write descriptive link text (required)
+
+Use link text that identifies the destination without surrounding context. Do not use “click here,” “here,” or a raw URL as link text.
+
+**Use:**
+
+```markdown
+See [Configure retention policies](…).
+```
+
+**Avoid:**
+
+```markdown
+For more information, [click here](…).
+```
 
 <!-- pelcrow:managed:end -->
 
