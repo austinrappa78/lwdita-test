@@ -1,0 +1,58 @@
+---
+title: Data Replication Overview
+status: approved
+owner: Austin Rappa
+audience: Administrators
+platform: Cloud
+sources:
+  - commit:initial
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Replication Overview</title>
+</head>
+<body>
+  <article id="replication-overview">
+    <header>
+      <h1>Data Replication Overview</h1>
+    </header>
+    <p>Data replication enables continuous synchronization of backup storage across secondary sites and cloud storage targets.</p>
+
+    <section id="replication-modes">
+      <h2>Replication Modes</h2>
+      <p>Select a replication mode that matches your recovery point objectives (RPO) and network bandwidth availability.</p>
+
+      <p>The following table lists the supported replication modes and their operational parameters.</p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Replication Mode</th>
+            <th scope="col">Description</th>
+            <th scope="col">RPO Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Synchronous</td>
+            <td>Writes backup snapshots concurrently to primary and secondary sites.</td>
+            <td>Zero RPO</td>
+          </tr>
+          <tr>
+            <td>Asynchronous</td>
+            <td>Transfers backup snapshots periodically based on a configured interval.</td>
+            <td>Interval-based RPO</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="platform-support">
+      <h2>Platform Compatibility</h2>
+      <p data-props="platform(cloud)">Cloud replication automatically handles bandwidth throttling and target storage provisioning.</p>
+      <p data-props="platform(onprem)">On-premises replication requires explicit target storage path configuration.</p>
+    </section>
+  </article>
+</body>
+</html>
