@@ -3,10 +3,17 @@
     "pelcrow": {
       "type": "stdio",
       "command": "node",
-      "args": ["${workspaceFolder}/api/dist/mcp/stdio.js"],
+      "args": [
+        "C:/Git/pelcrow/api/dist/mcp/stdio.js"
+      ],
       "env": {
-        "PELCROW_CONFIG": "${workspaceFolder}/pelcrow.config.json"
+        "PELCROW_CONFIG": "C:/Git/pelcrow/pelcrow.config.json"
       }
+    },
+    "atlassian-rovo": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp/authv2"
     }
-  }
+  },
+  "inputs": []
 }
