@@ -1,0 +1,45 @@
+---
+title: Configure a Replication Job
+status: approved
+owner: Austin Rappa
+audience: Administrators
+platform: Cloud
+sources:
+  - commit:initial
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Configure a Replication Job</title>
+</head>
+<body>
+  <article id="configure-replication-job">
+    <header>
+      <h1>Configure a Replication Job</h1>
+    </header>
+    <p>Follow these steps to configure automated data replication for your backup policies.</p>
+
+    <section id="prerequisites">
+      <h2>Prerequisites</h2>
+      <p>Before configuring a replication job, verify that your network connection meets the target destination requirements.</p>
+    </section>
+
+    <section id="procedure">
+      <h2>Procedure</h2>
+      <ol>
+        <li>Log in to the admin dashboard.</li>
+        <li>Navigate to <strong>Policies</strong> &gt; <strong>Replication</strong>.</li>
+        <li>Click <strong>Create Replication Job</strong>.</li>
+        <li>Select the source backup workload and choose a destination target site.</li>
+        <li>Specify the synchronization schedule and bandwidth limit.</li>
+        <li>Click <strong>Save</strong> to activate the replication job.</li>
+      </ol>
+
+      <div data-props="platform(cloud)">
+        <p><strong>Note:</strong> Cloud targets require an active cloud storage subscription before activation.</p>
+      </div>
+    </section>
+  </article>
+</body>
+</html>
