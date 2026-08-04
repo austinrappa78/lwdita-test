@@ -33,5 +33,11 @@
       <topicref href="topics/recovery/knox-conditional-notes.md" format="mdita" navtitle="Knox Conditional Notes"/>
       <topicref href="topics/recovery/knox-shared-snippets.md" format="mdita" navtitle="Knox Reuse and Snippets"/>
     </chapter>
+
+    <chapter navtitle="Data Replication Feature">
+      <topicref href="topics/replication/replication-overview.html" format="hdita" navtitle="Data Replication Overview"/>
+      <topicref href="topics/replication/configure-replication-job.html" format="hdita" navtitle="Configure a Replication Job"/>
+      <topicref href="topics/replication/replication-troubleshooting.html" format="hdita" navtitle="Replication Troubleshooting Guide"/>
+    </chapter>
   </part>
 </bookmap>
