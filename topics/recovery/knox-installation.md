@@ -1,41 +1,44 @@
 ---
-author:
-  - Ausitn Rappa
-source: Markdown
-publisher: Publisher
-permissions: Permissions
+title: Install Knox Recovery
+status: approved
+owner: Austin Rappa
 audience: Users
-category: Category
-keyword:
-  - Keyword1
-  - Keyword2
-resourceid:
-  - Resourceid1
-  - Resourceid2
-workflow: review
+platform: cloud
+sources:
+  - commit:initial
 ---
 
-# Steps to Install
+# Install Knox Recovery
+
+Follow these steps to install Knox Recovery on your system.
+
+## Prerequisites
+
+Before installing Knox Recovery, verify that your environment meets the minimum system requirements.
+
+## Procedure
 
 1. Download the latest Knox installer from [Veracity Downloads](https://downloads.veracity.io/knox).
 
 2. Run the installer using the following command:
-   ```
+
+   ```bash
    sudo ./install-knox.sh
    ```
 
-   !!! note
-   
-       Ensure you have the necessary administrative privileges before running the installer. Installing Knox Recovery may require changes to system settings and access to protected directories.
+   > [!NOTE]
+   > Ensure you have administrative privileges before running the installer. Installing Knox Recovery requires system setting modifications and access to protected directories.
 
-3. Review the following settings before proceeding:
+3. Review the default configuration settings before proceeding:
 
-   | Field          | Description                     | Default Value |
-   | -------------- | ------------------------------- | ------------- |
-   | Port           | Port Knox listens on            | 9443          |
-   | Data Directory | Location for backup metadata    | /var/knox     |
-   | Enable Logs    | Whether to enable debug logging | true          |
+   The following table lists the default configuration settings for Knox.
 
-4. Continue with the installation process.
+   | Setting | Description | Default value |
+   |:--|:--|:--|
+   | Port | Port Knox listens on | 9443 |
+   | Data directory | Location for backup metadata | /var/knox |
+   | Enable logs | Whether to enable debug logging | true |
+
+4. Complete the installation process.
 
    ![Cybersecurity knowledge graph](../../images/cybersecurity-knowledge-graph.png)
