@@ -42,8 +42,10 @@ Consider the following validation rules and behaviors when performing calculatio
 - **Negative exponents**: Negative exponents return a fractional decimal result.
 - **Base zero with negative exponent**: Entering base 0 with a negative exponent displays the inline message `Cannot compute: undefined result`.
 
+<div data-props="version(5.1)">
 > [!NOTE]
-> The calculator does not chain multiple operations automatically. Perform multi-step calculations sequentially by using the result of one calculation as the input for the next.
+> In version 5.1, the calculator does not chain multiple operations automatically. Perform multi-step calculations sequentially by using the result of one calculation as the input for the next.
+</div>
 
 ## Example: Calculate Compounding Storage Growth
 
