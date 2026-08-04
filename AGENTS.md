@@ -26,6 +26,7 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 - **Write boundary**: create or update documentation only inside this destination repository unless the user explicitly names a different destination repository. Before writing, resolve the proposed path and verify that it remains inside this repository; if it does not, stop and correct the path.
 - **External sources are read-only**: source material may live in Downloads, Documents, Jira, Confluence, another repository, or any other readable location. Reading a source never authorizes writing beside it, and its directory structure must never determine the output directory.
 - **Follow the destination structure**: inspect this repository's maps and existing content hierarchy before choosing a path. In a DITA/MDITA repository that already uses a `topics/` hierarchy, place new authored topics under the appropriate `topics/<subject>/` subfolder in this repository.
+- **Generated output is not source**: never read from, edit, or create authored content under the configured build-output directory (organization default: `out/`). Pelcrow excludes these directories from its content index and workspace.
 - **Keep provenance separate from placement**: cite external inputs in `sources:` metadata, but keep the authored document in the destination repository's content hierarchy.
 - **Governed writes only**: when `file_with_provenance` is available, it is the write path for completed documents in this repository. Native file-write tools are for temporary working material only, not the finished topic.
 - **Govern the whole change**: if a topic also requires a map, navigation, manifest, or other supporting-file update, file every changed repository file through Pelcrow before claiming completion. Do not file the topic and then edit its map with a native filesystem tool.
@@ -63,7 +64,7 @@ HTML elements inside fenced code blocks are treated as literal example code and 
 
 ## Indexed Repositories
 
-- `docs` — 8 document(s), 0 key(s)
+- `docs` — 9 document(s), 0 key(s)
 
 ## Current Keys & Variables
 
