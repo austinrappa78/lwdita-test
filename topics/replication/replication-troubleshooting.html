@@ -1,0 +1,60 @@
+---
+title: Replication Troubleshooting Guide
+status: approved
+owner: Austin Rappa
+audience: Administrators
+platform: Cloud
+sources:
+  - commit:initial
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Replication Troubleshooting Guide</title>
+</head>
+<body>
+  <article id="replication-troubleshooting">
+    <header>
+      <h1>Replication Troubleshooting Guide</h1>
+    </header>
+    <p>Use this guide to diagnose and resolve common data replication issues.</p>
+
+    <section id="common-issues">
+      <h2>Common Issues and Solutions</h2>
+
+      <p>The following table lists common error codes and recommended resolution actions.</p>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Error Code</th>
+            <th scope="col">Cause</th>
+            <th scope="col">Resolution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ERR_REPL_TIMEOUT</td>
+            <td>Network latency exceeded connection timeout limit.</td>
+            <td>Increase the timeout threshold under Replication Settings.</td>
+          </tr>
+          <tr>
+            <td>ERR_TARGET_FULL</td>
+            <td>Secondary target storage lacks sufficient free capacity.</td>
+            <td>Expand target volume or apply retention cleanup rules.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="diagnostic-commands">
+      <h2>Verify Target Connectivity</h2>
+      <ol>
+        <li>Open a terminal session on the source appliance.</li>
+        <li>Run the diagnostic ping command to test the target destination endpoint.</li>
+        <li>Inspect replication log files for active session warnings.</li>
+      </ol>
+    </section>
+  </article>
+</body>
+</html>
