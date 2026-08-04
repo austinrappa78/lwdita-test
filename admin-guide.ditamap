@@ -20,6 +20,7 @@
       <topicref href="topics/admin-guide/install-cloud-backup.dita" navtitle="Install Cloud Backup"/>
       <topicref href="topics/admin-guide/install-onprem-backup.dita" navtitle="Install On-Prem Backup"/>
       <topicref href="topics/admin-guide/configure-retention-policies.dita" navtitle="Configure Retention Policies"/>
+      <topicref href="topics/admin-guide/retention-calculator-usage.md" format="mdita" navtitle="Estimate Storage with Retention Calculator"/>
       <topicref href="topics/admin-guide/manage-users-and-roles.dita" navtitle="Manage Users and Roles"/>
       <topicref href="topics/admin-guide/monitor-backup-jobs.dita" navtitle="Monitor Backup Jobs"/>
     </chapter>
