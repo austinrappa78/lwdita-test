@@ -31,5 +31,6 @@
       "type": "string",
       "required": true
     }
-  ]
+  ],
+  "outputDirectory": "out"
 }
