@@ -5,7 +5,8 @@ owner: Austin Rappa
 audience: Users
 platform: cloud
 sources:
-  - commit:initial
+  - commit:5f31fff8f7983eafcae989959171618b08ef70e3
+  - ticket:PEL-58
 ---
 
 # Install Knox Recovery
