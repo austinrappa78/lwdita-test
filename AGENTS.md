@@ -3,6 +3,7 @@
 This repository is managed by **Pelcrow**, the reference desk and fact-checker for AI authoring agents.
 
 <!-- pelcrow:managed:start -->
+<!-- pelcrow:schema-version:sha256:0b880597c837eb3a -->
 <!-- Generated deterministically by Pelcrow from the live content index. -->
 <!-- Do not edit inside this block: it is overwritten on every regeneration. -->
 
@@ -43,10 +44,12 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 
 ## Mandatory Metadata
 
-Every document's YAML frontmatter must set: title, status, owner, audience, platform.
+Every document's YAML frontmatter must set: title, status, owner, audience, platform, type.
+- `status`: required — one of draft | review | approved | published | deprecated
+- `type`: required — one of concept | task | reference. DITA topic type: concept (explanations/architecture), task (ordered procedures/how-tos), or reference (APIs/schemas/tables).
 The migration placeholders title: 'Untitled Document' and owner: 'unassigned' must be replaced before commit; the validation gate rejects them on strictly tracked files.
 This list is managed centrally (org settings), not edited per-repo. `.pelcrow/config.json` in this repository is a **read-only synced copy** of it, kept here for visibility — regenerated from the source of truth on every push, so hand-editing it has no effect and any edits will be silently overwritten.
-**Current document owner:** set `owner: Austin Rappa`. Pelcrow resolved this identity for the current authoring session. Do not replace it with a reporter, assignee, email sender/recipient, or another person named in source material.
+**Current document owner:** set `owner: pelcrow`. Pelcrow resolved this identity for the current authoring session. Do not replace it with a reporter, assignee, email sender/recipient, or another person named in source material.
 **Don't guess `owner`.** A person named in an email, ticket, or spec (reporter, requester, stakeholder) is not automatically the document's owner. `file_with_provenance` overwrites this field with the operator's own git identity at commit time regardless of what you put there, so leave it as the placeholder value rather than inventing a plausible-looking name from the source material.
 
 ## Validation Gate (hard failures)
@@ -55,6 +58,7 @@ This list is managed centrally (org settings), not edited per-repo. `.pelcrow/co
 - **Duplicate definitions**: a key defined more than once in the global namespace is rejected.
 - **Transclusion cycles**: reuse loops (A → B → A) are forbidden.
 - **Missing metadata**: required frontmatter fields must be present (see Mandatory Metadata).
+- **Invalid metadata value**: metadata values with permitted options must match one of the allowed values.
 - **Malformed frontmatter**: YAML that fails to parse is rejected.
 - **Banned terminology**: any term in the organization's termbase is flagged with its preferred replacement.
 
