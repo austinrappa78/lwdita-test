@@ -11,7 +11,14 @@
       "key": "status",
       "label": "Status",
       "type": "string",
-      "required": true
+      "required": true,
+      "allowedValues": [
+        "draft",
+        "review",
+        "approved",
+        "published",
+        "deprecated"
+      ]
     },
     {
       "key": "owner",
@@ -30,6 +37,18 @@
       "label": "Platform",
       "type": "string",
       "required": true
+    },
+    {
+      "key": "type",
+      "label": "Topic Type",
+      "type": "string",
+      "required": true,
+      "allowedValues": [
+        "concept",
+        "task",
+        "reference"
+      ],
+      "description": "DITA topic type: concept (explanations/architecture), task (ordered procedures/how-tos), or reference (APIs/schemas/tables)."
     }
   ],
   "outputDirectory": "out"
