@@ -51,5 +51,7 @@
       "description": "DITA topic type: concept (explanations/architecture), task (ordered procedures/how-tos), or reference (APIs/schemas/tables)."
     }
   ],
-  "outputDirectory": "out"
+  "outputDirectory": "out",
+  "defaultTopicDirectory": "topics",
+  "defaultImageDirectory": "images"
 }
