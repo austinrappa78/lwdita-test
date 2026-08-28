@@ -49,8 +49,41 @@
         "reference"
       ],
       "description": "DITA topic type: concept (explanations/architecture), task (ordered procedures/how-tos), or reference (APIs/schemas/tables)."
+    },
+    {
+      "key": "journeyStage",
+      "label": "Journey Stage",
+      "type": "string",
+      "required": true,
+      "description": "Where in the customer journey this topic sits (e.g. Evaluate, Plan, Build, Maintain). The organization's stage names are managed on the Content Gaps page, not here — this field just carries the value per topic."
+    },
+    {
+      "key": "useCases",
+      "label": "Use Cases",
+      "type": "string-list",
+      "required": false,
+      "description": "Which of the organization's defined use cases this topic covers (see the Content Gaps page). Drives the demand-side coverage matrix — a topic with no use case tag is invisible to it."
     }
   ],
+  "journeyStages": [
+    {
+      "name": "Evaluate",
+      "description": ""
+    },
+    {
+      "name": "Plan",
+      "description": ""
+    },
+    {
+      "name": "Build",
+      "description": ""
+    },
+    {
+      "name": "Maintain",
+      "description": ""
+    }
+  ],
+  "useCases": [],
   "outputDirectory": "out",
   "defaultTopicDirectory": "topics",
   "defaultImageDirectory": "images"
