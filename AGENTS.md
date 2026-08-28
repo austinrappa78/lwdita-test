@@ -3,7 +3,7 @@
 This repository is managed by **Pelcrow**, the reference desk and fact-checker for AI authoring agents.
 
 <!-- pelcrow:managed:start -->
-<!-- pelcrow:schema-version:sha256:0b880597c837eb3a -->
+<!-- pelcrow:schema-version:sha256:68ddd1038744c3ed -->
 <!-- Generated deterministically by Pelcrow from the live content index. -->
 <!-- Do not edit inside this block: it is overwritten on every regeneration. -->
 
@@ -44,9 +44,12 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 
 ## Mandatory Metadata
 
-Every document's YAML frontmatter must set: title, status, owner, audience, platform, type.
+Every document's YAML frontmatter must set: title, status, owner, audience, platform, type, journeyStage.
 - `status`: required — one of draft | review | approved | published | deprecated
 - `type`: required — one of concept | task | reference. DITA topic type: concept (explanations/architecture), task (ordered procedures/how-tos), or reference (APIs/schemas/tables).
+- `journeyStage`: required. Where in the customer journey this topic sits (e.g. Evaluate, Plan, Build, Maintain). The organization's stage names are managed on the Content Gaps page, not here — this field just carries the value per topic.
+- `useCases`: optional. Which of the organization's defined use cases this topic covers (see the Content Gaps page). Drives the demand-side coverage matrix — a topic with no use case tag is invisible to it.
+The organization's current `journeyStage`/`useCases` values (with descriptions) live in `.pelcrow/config.json` under the `journeyStages`/`useCases` keys — read that file, or call the `get_journey_taxonomy` MCP tool if it's available, before setting either field. Never guess a value from its name alone; a value not in that list is invalid.
 The migration placeholders title: 'Untitled Document' and owner: 'unassigned' must be replaced before commit; the validation gate rejects them on strictly tracked files.
 This list is managed centrally (org settings), not edited per-repo. `.pelcrow/config.json` in this repository is a **read-only synced copy** of it, kept here for visibility — regenerated from the source of truth on every push, so hand-editing it has no effect and any edits will be silently overwritten.
 **Current document owner:** set `owner: pelcrow`. Pelcrow resolved this identity for the current authoring session. Do not replace it with a reporter, assignee, email sender/recipient, or another person named in source material.
