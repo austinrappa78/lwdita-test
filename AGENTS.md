@@ -72,7 +72,7 @@ HTML elements inside fenced code blocks are treated as literal example code and 
 ## Indexed Repositories
 
 - `docs` — 8 document(s), 0 key(s)
-- `pelcrow-testcases` — 0 document(s), 0 key(s)
+- `pelcrow-testcases` — 7 document(s), 0 key(s)
 
 ## Current Keys & Variables
 
