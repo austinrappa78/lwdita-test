@@ -15,8 +15,8 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 4. **Never invent factual variables**: product names, version numbers, URLs, and environment flags must be referenced via keyrefs — never guessed or hardcoded.
 5. **Use only verified source details**: only state behavior, UI labels, prerequisites, supported formats, and procedure steps supported by a cited source or verified existing documentation. Do not turn plausible assumptions into instructions.
 6. **Record provenance**: every new or updated document must cite what produced it in a frontmatter `sources:` list (plural — not `source:`) — one or more opaque IDs such as `commit:abc123`, `ticket:JIRA-42`, or a spec name/URL. This is what staleness tracking keys off; a document with no `sources:` entry, or the wrong field name, can never be flagged stale when its source changes.
-7. **Check before filing**: run every draft through `validate_draft` before committing content — this already includes terminology checking. Use `check_terminology` on its own to check a smaller piece of text (before it's assembled into a full draft) for banned/avoid terms and their preferred replacements.
-8. **File through Pelcrow automatically**: after the checks pass, use `file_with_provenance` for every completed repository document and every supporting file changed to integrate it, including maps and navigation files. File each required change before claiming completion. Do not make users learn this tool name or add it to their prompt. Do not substitute a native filesystem write merely because one is available.
+7. **Check before saving**: run every draft through `validate_draft` before writing the finished content locally — this already includes terminology checking. Use `check_terminology` on its own to check a smaller piece of text (before it's assembled into a full draft) for banned/avoid terms and their preferred replacements.
+8. **Save locally and stop**: after the checks pass, use native filesystem tools to create or update every required topic, map, navigation file, or manifest in the requested local output folder. Do not commit, push, open a pull request, or write through a hosted repository API unless the user separately and explicitly asks for that exact version-control action.
 9. **Name files descriptively**: file names must be kebab-case and derived from the topic's actual subject, matching this repository's existing convention (e.g. `configure-retention-policies.dita`, `knox-compatibility-matrix.md`) — never generic names like `overview.md`, `usage.md`, or `index.md` that say nothing about what the topic covers.
 10. **Look up ticket references yourself, don't trust a paraphrase**: Pelcrow has no access to any issue-tracker system (Jira, Linear, GitHub Issues, etc.) — if the task mentions a ticket ID that will end up in `sources:` as `ticket:ID`, and a ticket-tracker MCP server is also available to you in this session, search it directly for that ticket's actual current title, description, and status before drafting. A secondhand summary pasted into the conversation can be stale, incomplete, or wrong; the ticket itself is the source of truth you're citing.
 11. **Search for a ticket before assuming there isn't one**: if you're asked to draft something without a ticket ID being named, and a ticket-tracker MCP server is available, search it for anything that plausibly matches the topic before you start — don't just proceed source-less because none was handed to you. If you find a real candidate, confirm with the user which one (if any) applies before citing it; never guess an ID. If nothing plausible turns up, or no tracker is available, that's fine — `sources:` accepts `commit:`, `spec:`, or a URL just as well, and a ticket citation specifically is never mandatory.
@@ -29,9 +29,9 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 - **Follow the destination structure**: inspect this repository's maps and existing content hierarchy before choosing a path. In a DITA/MDITA repository that already uses a `topics/` hierarchy, place new authored topics under the appropriate `topics/<subject>/` subfolder in this repository.
 - **Generated output is not source**: never read from, edit, or create authored content under the configured build-output directory (organization default: `out/`). Pelcrow excludes these directories from its content index and workspace.
 - **Keep provenance separate from placement**: cite external inputs in `sources:` metadata, but keep the authored document in the destination repository's content hierarchy.
-- **Governed writes only**: when `file_with_provenance` is available, it is the write path for completed documents in this repository. Native file-write tools are for temporary working material only, not the finished topic.
-- **Govern the whole change**: if a topic also requires a map, navigation, manifest, or other supporting-file update, file every changed repository file through Pelcrow before claiming completion. Do not file the topic and then edit its map with a native filesystem tool.
-- **Report the destination Pelcrow returns**: after filing, use the tool response’s repository-qualified `destination` or repository-relative `filePath` exactly. Never resolve that relative path against the agent workspace or MCP server directory, and never invent an absolute path or `file:` URI that Pelcrow did not return.
+- **Local writes only by default**: write completed documents with native filesystem tools inside this repository’s local working tree. A documentation request does not authorize any remote repository mutation.
+- **Complete the local change**: if a topic also requires a map, navigation, manifest, or other supporting-file update, make every required local edit before claiming the content is ready for review.
+- **Leave Git to the user**: do not commit, push, open a pull request, or call a hosted write API unless the user separately and explicitly requests that exact action. Report the repository-relative paths changed so the user can review and check them in.
 
 ## MDITA Authoring Syntax
 
@@ -53,7 +53,7 @@ The organization's current `journeyStage`/`useCases` values (with descriptions) 
 The migration placeholders title: 'Untitled Document' and owner: 'unassigned' must be replaced before commit; the validation gate rejects them on strictly tracked files.
 This list is managed centrally (org settings), not edited per-repo. `.pelcrow/config.json` in this repository is a **read-only synced copy** of it, kept here for visibility — regenerated from the source of truth on every push, so hand-editing it has no effect and any edits will be silently overwritten.
 **Current document owner:** set `owner: pelcrow`. Pelcrow resolved this identity for the current authoring session. Do not replace it with a reporter, assignee, email sender/recipient, or another person named in source material.
-**Don't guess `owner`.** A person named in an email, ticket, or spec (reporter, requester, stakeholder) is not automatically the document's owner. `file_with_provenance` overwrites this field with the operator's own git identity at commit time regardless of what you put there, so leave it as the placeholder value rather than inventing a plausible-looking name from the source material.
+**Don't guess `owner`.** A person named in an email, ticket, or spec (reporter, requester, stakeholder) is not automatically the document's owner. Use the current document owner shown above when one is provided; otherwise leave the configured placeholder rather than inventing a plausible-looking name from the source material.
 
 ## Validation Gate (hard failures)
 
@@ -67,12 +67,12 @@ This list is managed centrally (org settings), not edited per-repo. `.pelcrow/co
 
 HTML elements inside fenced code blocks are treated as literal example code and are never indexed as live references.
 
-**This is not optional and it is not this document asking nicely.** Every commit to this repository — filed through `file_with_provenance`, written by hand, or produced by a tool that never called any Pelcrow MCP tool — is re-validated against these exact rules before it can merge. Calling `validate_draft`/`check_terminology` while drafting only changes when you find out about a problem, not whether it will be caught. Treat a hard failure here as equivalent to a failing test blocking a merge, because that is what it is.
+**This is not optional and it is not this document asking nicely.** Every commit to this repository — whether created by the user or another authorized workflow — is re-validated against these exact rules before it can merge. Calling `validate_draft`/`check_terminology` while drafting only changes when you find out about a problem, not whether it will be caught. Treat a hard failure here as equivalent to a failing test blocking a merge, because that is what it is.
 
 ## Indexed Repositories
 
 - `docs` — 8 document(s), 0 key(s)
-- `pelcrow-testcases` — 7 document(s), 0 key(s)
+- `pelcrow-testcases` — 8 document(s), 0 key(s)
 
 ## Current Keys & Variables
 
@@ -90,10 +90,10 @@ _No keys defined yet._
 - **Do not guess or hallucinate.** Use `search_documents` to find existing topics and `search_keys`/`resolve_key` to find reusable variables and snippets.
 - **Stop on duplicate risk.** If `search_documents` returns `actionRequired: true`, do not draft. Show the candidate to the user and ask whether to reuse it in the map, update it, create a distinct variant, or intentionally create a separate topic. Never choose or fabricate an override yourself.
 - **Ground every claim.** Only include behavior, UI labels, prerequisites, supported formats, and procedure steps explicitly supported by cited sources or verified existing documentation. Omit unsupported details or identify them as needing confirmation; plausible inference is not evidence.
-- **Validate before you save.** Before presenting a final plan or running a git commit, you must run your proposed changes through the `validate_draft` tool.
+- **Validate before you save.** Before writing a finished topic to the local working tree, run the proposed content through the `validate_draft` tool.
 - **Respect terminology.** Use the `check_terminology` tool to ensure compliance with the organization's style guide.
-- **Use the governed save path automatically.** When the user asks you to create, update, write, or finish repository documentation, call `file_with_provenance` after validation instead of writing the finished file with a native filesystem tool. The user does not need to know or name this internal tool. A normal request to create or update repository content authorizes this governed filing step; only stop before filing when the user explicitly asks for a preview/draft only, asks for no commit, or the tool is unavailable.
-- **Never bypass governance silently.** If `file_with_provenance` is unavailable or rejects the document, do not quietly write the file another way. Return the validated draft and explain what prevented governed filing.
+- **Save finished content locally.** After validation, use the agent's native filesystem tools to create or update the topic in the requested output folder inside the local working tree.
+- **Stop before version-control actions.** Creating or updating documentation does not authorize a commit, push, pull request, or remote repository write. Leave the validated files in the local working tree for the user to review and check in. Only run a version-control action when the user separately and explicitly requests that exact action.
 
 ## Organization Writing Guide
 
