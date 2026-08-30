@@ -52,8 +52,7 @@ Every document's YAML frontmatter must set: title, status, owner, audience, plat
 The organization's current `journeyStage`/`useCases` values (with descriptions) live in `.pelcrow/config.json` under the `journeyStages`/`useCases` keys — read that file, or call the `get_journey_taxonomy` MCP tool if it's available, before setting either field. Never guess a value from its name alone; a value not in that list is invalid.
 The migration placeholders title: 'Untitled Document' and owner: 'unassigned' must be replaced before commit; the validation gate rejects them on strictly tracked files.
 This list is managed centrally (org settings), not edited per-repo. `.pelcrow/config.json` in this repository is a **read-only synced copy** of it, kept here for visibility — regenerated from the source of truth on every push, so hand-editing it has no effect and any edits will be silently overwritten.
-**Current document owner:** set `owner: pelcrow`. Pelcrow resolved this identity for the current authoring session. Do not replace it with a reporter, assignee, email sender/recipient, or another person named in source material.
-**Don't guess `owner`.** A person named in an email, ticket, or spec (reporter, requester, stakeholder) is not automatically the document's owner. Use the current document owner shown above when one is provided; otherwise leave the configured placeholder rather than inventing a plausible-looking name from the source material.
+**Don't guess `owner`.** A person named in an email, ticket, or spec (reporter, requester, stakeholder) is not automatically the document's owner. Use the current document owner shown above when one is provided. Otherwise, run `git config user.name` in the destination repository and use that non-empty local Git identity; if it is unavailable, ask the user. Never use Pelcrow, `pelcrow[bot]`, a server OS account, or the repository owner/organization as the document owner.
 
 ## Validation Gate (hard failures)
 
