@@ -87,62 +87,52 @@
     {
       "name": "Device Implantation",
       "category": "Clinical Procedures",
-      "description": "The physical procedure of preparing, inserting, and fixing the lead.",
-      "requiredStages": []
+      "description": "The physical procedure of preparing, inserting, and fixing the lead."
     },
     {
       "name": "Device Extraction",
       "category": "Clinical Procedures",
-      "description": "End-of-life procedures or upgrades",
-      "requiredStages": []
+      "description": "End-of-life procedures or upgrades"
     },
     {
       "name": "Initial Configuration",
       "category": "Device Management",
-      "description": "Setting baseline parameters post-implant",
-      "requiredStages": []
+      "description": "Setting baseline parameters post-implant"
     },
     {
       "name": "Routine Patient Monitoring",
       "category": "Device Management",
-      "description": "Telemetry checks and periodic follow-ups",
-      "requiredStages": []
+      "description": "Telemetry checks and periodic follow-ups"
     },
     {
       "name": "Parameter Adjustments",
       "category": "Device Management",
-      "description": "Tuning pacing/sensing parameters over time",
-      "requiredStages": []
+      "description": "Tuning pacing/sensing parameters over time"
     },
     {
       "name": "Resolving Error Codes",
       "category": "Troubleshooting",
-      "description": "",
-      "requiredStages": []
+      "description": ""
     },
     {
       "name": "Investigating Alerts",
       "category": "Troubleshooting",
-      "description": "Interpreting unexpected device behavior",
-      "requiredStages": []
+      "description": "Interpreting unexpected device behavior"
     },
     {
       "name": "Procurement",
       "category": "Compliance",
-      "description": "",
-      "requiredStages": []
+      "description": ""
     },
     {
       "name": "Compatibility",
       "category": "Compliance",
-      "description": "Matching physical/electrical specs to pulse generators",
-      "requiredStages": []
+      "description": "Matching physical/electrical specs to pulse generators"
     },
     {
       "name": "Safety Protocols",
       "category": "Compliance",
-      "description": "Compatibility checks, sterilization, contraindications",
-      "requiredStages": []
+      "description": "Compatibility checks, sterilization, contraindications"
     }
   ],
   "outputDirectory": "out",
