@@ -131,6 +131,12 @@
       "category": "Compliance",
       "description": "",
       "requiredStages": []
+    },
+    {
+      "name": "Compatibility",
+      "category": "Compliance",
+      "description": "Matching physical/electrical specs to pulse generators",
+      "requiredStages": []
     }
   ],
   "outputDirectory": "out",
