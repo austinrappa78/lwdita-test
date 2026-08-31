@@ -89,6 +89,12 @@
       "category": "Clinical Procedures",
       "description": "The physical procedure of preparing, inserting, and fixing the lead.",
       "requiredStages": []
+    },
+    {
+      "name": "Device Extraction",
+      "category": "Clinical Procedures",
+      "description": "End-of-life procedures or upgrades",
+      "requiredStages": []
     }
   ],
   "outputDirectory": "out",
