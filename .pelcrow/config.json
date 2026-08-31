@@ -101,6 +101,12 @@
       "category": "Device Management",
       "description": "Setting baseline parameters post-implant",
       "requiredStages": []
+    },
+    {
+      "name": "Routine Patient Monitoring",
+      "category": "Device Management",
+      "description": "Telemetry checks and periodic follow-ups",
+      "requiredStages": []
     }
   ],
   "outputDirectory": "out",
