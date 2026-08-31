@@ -44,14 +44,14 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 
 ## Mandatory Metadata
 
-Every document's YAML frontmatter must set: title, status, owner, audience, platform, type, journeyStage.
+Every document's YAML frontmatter must set: title, status, owner, type, journeyStage, audience, platform.
 - `status`: required — one of draft | review | approved | published | deprecated
 - `type`: required — one of concept | task | reference. DITA topic type: concept (explanations/architecture), task (ordered procedures/how-tos), or reference (APIs/schemas/tables).
 - `journeyStage`: required. Where in the customer journey this topic sits (e.g. Evaluate, Plan, Build, Maintain). The organization's stage names are managed on the Content Gaps page, not here — this field just carries the value per topic.
 - `useCases`: optional. Which of the organization's defined use cases this topic covers (see the Content Gaps page). Drives the demand-side coverage matrix — a topic with no use case tag is invisible to it.
 The organization's current `journeyStage`/`useCases` values (with descriptions) live in `.pelcrow/config.json` under the `journeyStages`/`useCases` keys — read that file, or call the `get_journey_taxonomy` MCP tool if it's available, before setting either field. Never guess a value from its name alone; a value not in that list is invalid.
 The migration placeholders title: 'Untitled Document' and owner: 'unassigned' must be replaced before commit; the validation gate rejects them on strictly tracked files.
-This list is managed centrally (org settings), not edited per-repo. `.pelcrow/config.json` in this repository is a **read-only synced copy** of it, kept here for visibility — regenerated from the source of truth on every push, so hand-editing it has no effect and any edits will be silently overwritten.
+Pelcrow system fields are fixed; organization fields are managed centrally in Settings. The effective list is not edited per-repo. `.pelcrow/config.json` in this repository is a **read-only synced copy** of it, kept here for visibility — regenerated from the source of truth on every push, so hand-editing it has no effect and any edits will be silently overwritten.
 **Don't guess `owner`.** A person named in an email, ticket, or spec (reporter, requester, stakeholder) is not automatically the document's owner. Run `git config user.name` in the destination repository and use that non-empty local Git identity; if it is unavailable, ask the user. Never use Pelcrow, `pelcrow[bot]`, a server OS account, or the repository owner/organization as the document owner.
 
 ## Validation Gate (hard failures)
