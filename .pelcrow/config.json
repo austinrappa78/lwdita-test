@@ -125,6 +125,12 @@
       "category": "Troubleshooting",
       "description": "Interpreting unexpected device behavior",
       "requiredStages": []
+    },
+    {
+      "name": "Procurement",
+      "category": "Compliance",
+      "description": "",
+      "requiredStages": []
     }
   ],
   "outputDirectory": "out",
