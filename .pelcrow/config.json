@@ -137,6 +137,12 @@
       "category": "Compliance",
       "description": "Matching physical/electrical specs to pulse generators",
       "requiredStages": []
+    },
+    {
+      "name": "Safety Protocols",
+      "category": "Compliance",
+      "description": "Compatibility checks, sterilization, contraindications",
+      "requiredStages": []
     }
   ],
   "outputDirectory": "out",
