@@ -27,18 +27,6 @@
       "required": true
     },
     {
-      "key": "audience",
-      "label": "Audience",
-      "type": "string",
-      "required": true
-    },
-    {
-      "key": "platform",
-      "label": "Platform",
-      "type": "string",
-      "required": true
-    },
-    {
       "key": "type",
       "label": "Topic Type",
       "type": "string",
@@ -63,6 +51,18 @@
       "type": "string-list",
       "required": false,
       "description": "Which of the organization's defined use cases this topic covers (see the Content Gaps page). Drives the demand-side coverage matrix — a topic with no use case tag is invisible to it."
+    },
+    {
+      "key": "audience",
+      "label": "Audience",
+      "type": "string",
+      "required": true
+    },
+    {
+      "key": "platform",
+      "label": "Platform",
+      "type": "string",
+      "required": true
     }
   ],
   "journeyStages": [
