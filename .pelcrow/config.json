@@ -119,6 +119,12 @@
       "category": "Troubleshooting",
       "description": "",
       "requiredStages": []
+    },
+    {
+      "name": "Investigating Alerts",
+      "category": "Troubleshooting",
+      "description": "Interpreting unexpected device behavior",
+      "requiredStages": []
     }
   ],
   "outputDirectory": "out",
