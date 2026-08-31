@@ -83,7 +83,14 @@
       "description": ""
     }
   ],
-  "useCases": [],
+  "useCases": [
+    {
+      "name": "Device Implantation",
+      "category": "Clinical Procedures",
+      "description": "The physical procedure of preparing, inserting, and fixing the lead.",
+      "requiredStages": []
+    }
+  ],
   "outputDirectory": "out",
   "defaultTopicDirectory": "topics",
   "defaultImageDirectory": "images"
