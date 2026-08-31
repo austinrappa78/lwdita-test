@@ -95,6 +95,12 @@
       "category": "Clinical Procedures",
       "description": "End-of-life procedures or upgrades",
       "requiredStages": []
+    },
+    {
+      "name": "Initial Configuration",
+      "category": "Device Management",
+      "description": "Setting baseline parameters post-implant",
+      "requiredStages": []
     }
   ],
   "outputDirectory": "out",
