@@ -107,6 +107,12 @@
       "category": "Device Management",
       "description": "Telemetry checks and periodic follow-ups",
       "requiredStages": []
+    },
+    {
+      "name": "Parameter Adjustments",
+      "category": "Device Management",
+      "description": "Tuning pacing/sensing parameters over time",
+      "requiredStages": []
     }
   ],
   "outputDirectory": "out",
