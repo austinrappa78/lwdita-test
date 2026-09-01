@@ -34,9 +34,10 @@
       "allowedValues": [
         "concept",
         "task",
-        "reference"
+        "reference",
+        "troubleshooting"
       ],
-      "description": "DITA topic type: concept (explanations/architecture), task (ordered procedures/how-tos), or reference (APIs/schemas/tables)."
+      "description": "DITA topic type: concept (explanations/architecture), task (ordered procedures/how-tos), reference (APIs/schemas/tables), or troubleshooting (diagnosing and resolving a specific problem — condition, cause, and remedy)."
     },
     {
       "key": "journeyStage",
