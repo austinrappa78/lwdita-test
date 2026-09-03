@@ -3,7 +3,7 @@
 This repository is managed by **Pelcrow**, the reference desk and fact-checker for AI authoring agents.
 
 <!-- pelcrow:managed:start -->
-<!-- pelcrow:schema-version:sha256:539cf300c59e65c1 -->
+<!-- pelcrow:schema-version:sha256:221d44d41c965a4a -->
 <!-- Generated deterministically by Pelcrow from the live content index. -->
 <!-- Do not edit inside this block: it is overwritten on every regeneration. -->
 
@@ -44,11 +44,10 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 
 ## Mandatory Metadata
 
-Every document's YAML frontmatter must set: title, status, owner, type, journeyStage, audience, platform.
-- `status`: required — one of draft | review | approved | published | deprecated
+Every document's YAML frontmatter must set: title, owner, type, journeyStage, useCases, audience, platform.
 - `type`: required — one of concept | task | reference | troubleshooting. DITA topic type: concept (explanations/architecture), task (ordered procedures/how-tos), reference (APIs/schemas/tables), or troubleshooting (diagnosing and resolving a specific problem — condition, cause, and remedy).
 - `journeyStage`: required. Where in the customer journey this topic sits (e.g. Evaluate, Plan, Build, Maintain). The organization's stage names are managed on the Content Gaps page, not here — this field just carries the value per topic.
-- `useCases`: optional. Which of the organization's defined use cases this topic covers (see the Content Gaps page). Drives the demand-side coverage matrix — a topic with no use case tag is invisible to it.
+- `useCases`: required. Which of the organization's defined use cases this topic covers (see the Content Gaps page). Drives the demand-side coverage matrix — a topic with no use case tag is invisible to it.
 The organization's current `journeyStage`/`useCases` values (with descriptions) live in `.pelcrow/config.json` under the `journeyStages`/`useCases` keys — read that file, or call the `get_journey_taxonomy` MCP tool if it's available, before setting either field. Never guess a value from its name alone; a value not in that list is invalid.
 The migration placeholders title: 'Untitled Document' and owner: 'unassigned' must be replaced before commit; the validation gate rejects them on strictly tracked files.
 Pelcrow system fields are fixed; organization fields are managed centrally in Settings. The effective list is not edited per-repo. `.pelcrow/config.json` in this repository is a **read-only synced copy** of it, kept here for visibility — regenerated from the source of truth on every push, so hand-editing it has no effect and any edits will be silently overwritten.
