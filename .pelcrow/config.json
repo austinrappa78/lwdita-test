@@ -8,19 +8,6 @@
       "required": true
     },
     {
-      "key": "status",
-      "label": "Status",
-      "type": "string",
-      "required": true,
-      "allowedValues": [
-        "draft",
-        "review",
-        "approved",
-        "published",
-        "deprecated"
-      ]
-    },
-    {
       "key": "owner",
       "label": "Owner",
       "type": "string",
@@ -50,7 +37,7 @@
       "key": "useCases",
       "label": "Use Cases",
       "type": "string-list",
-      "required": false,
+      "required": true,
       "description": "Which of the organization's defined use cases this topic covers (see the Content Gaps page). Drives the demand-side coverage matrix — a topic with no use case tag is invisible to it."
     },
     {
