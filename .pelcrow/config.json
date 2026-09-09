@@ -1,5 +1,6 @@
 {
   "version": 1,
+  "repoId": "docs",
   "metadataSchema": [
     {
       "key": "title",
@@ -53,6 +54,9 @@
       "required": true
     }
   ],
+  "includePaths": [],
+  "prePushValidation": true,
+  "severities": {},
   "journeyStages": [
     {
       "name": "Evaluate",
