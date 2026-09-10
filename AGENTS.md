@@ -51,7 +51,7 @@ Every document's YAML frontmatter must set: title, owner, type, journeyStage, us
 The organization's current `journeyStage`/`useCases` values (with descriptions) live in `.pelcrow/config.json` under the `journeyStages`/`useCases` keys — read that file, or call the `get_journey_taxonomy` MCP tool if it's available, before setting either field. Never guess a value from its name alone; a value not in that list is invalid.
 The migration placeholders `title: Untitled Document` and `owner: unassigned` must be replaced before commit; the validation gate rejects them on strictly tracked files.
 Pelcrow system fields are fixed; organization fields are managed centrally in Settings. The effective list is not edited per-repo. `.pelcrow/config.json` in this repository is a **read-only synced copy** of it, kept here for visibility — regenerated from the source of truth on every push, so hand-editing it has no effect and any edits will be silently overwritten.
-**Don't quote frontmatter values.** Write YAML scalars bare — `title: Troubleshoot error code E-04 (lead impedance out of range)`, `owner: Austin Rappa`, list items as `- ticket:DEMO-123` — never wrapped in `"` or `'`. Quote only when YAML syntax actually requires it: the value contains `: ` (colon-space) or ` #` (space-hash), begins with an indicator character (`- ? : , [ ] { } # & * ! | > ' " % @ \``), has meaningful leading or trailing whitespace, or is a string that would otherwise parse as a boolean, number, null, or date (`yes`, `1.20`, `null`, an ISO `YYYY-MM-DD` value). When in doubt leave it unquoted — malformed frontmatter is a hard validation failure, so a genuine need for quoting surfaces there.
+**Don't quote frontmatter values.** Write YAML scalars bare — `title: Troubleshoot error code E-04 (lead impedance out of range)`, `owner: Documentation Author`, list items as `- ticket:DEMO-123` — never wrapped in `"` or `'`. Quote only when YAML syntax actually requires it: the value contains `: ` (colon-space) or ` #` (space-hash), begins with an indicator character (`- ? : , [ ] { } # & * ! | > ' " % @ \``), has meaningful leading or trailing whitespace, or is a string that would otherwise parse as a boolean, number, null, or date (`yes`, `1.20`, `null`, an ISO `YYYY-MM-DD` value). When in doubt leave it unquoted — malformed frontmatter is a hard validation failure, so a genuine need for quoting surfaces there.
 **Don't guess `owner`.** A person named in an email, ticket, or spec (reporter, requester, stakeholder) is not automatically the document's owner. Run `git config user.name` in the destination repository and use that non-empty local Git identity; if it is unavailable, ask the user. Never use Pelcrow, `pelcrow[bot]`, a server OS account, or the repository owner/organization as the document owner.
 
 ## Validation Gate (hard failures)
@@ -68,14 +68,9 @@ HTML elements inside fenced code blocks are treated as literal example code and 
 
 **This is not optional and it is not this document asking nicely.** Every commit to this repository — whether created by the user or another authorized workflow — is re-validated against these exact rules before it can merge. Calling `validate_draft`/`check_terminology` while drafting only changes when you find out about a problem, not whether it will be caught. Treat a hard failure here as equivalent to a failing test blocking a merge, because that is what it is.
 
-## Indexed Repositories
+## Pelcrow Repositories
 
-- `docs` — 8 document(s), 0 key(s)
-- `pelcrow-testcases` — 23 document(s), 0 key(s)
-
-## Current Keys & Variables
-
-_No keys defined yet._
+Valid repository IDs for Pelcrow tools and namespaced keys: `docs`, `pelcrow-testcases`.
 
 ## DITA-OT Operational Rules
 
