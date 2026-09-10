@@ -56,6 +56,10 @@
   ],
   "includePaths": [],
   "prePushValidation": true,
+  "sourceLinkBases": {
+    "commit": "https://github.com/austinrappa78/lwdita-test",
+    "pr": "https://github.com/austinrappa78/lwdita-test"
+  },
   "severities": {},
   "journeyStages": [
     {
