@@ -57,6 +57,7 @@
   "includePaths": [],
   "prePushValidation": true,
   "sourceLinkBases": {
+    "ticket": "https://rappadev.atlassian.net",
     "commit": "https://github.com/austinrappa78/lwdita-test",
     "pr": "https://github.com/austinrappa78/lwdita-test"
   },
