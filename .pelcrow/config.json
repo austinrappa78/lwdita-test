@@ -132,6 +132,7 @@
     }
   ],
   "outputDirectory": "out",
+  "documentationFormat": "mdita",
   "defaultTopicDirectory": "topics",
   "defaultImageDirectory": "images"
 }
