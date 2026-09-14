@@ -9,17 +9,7 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 
 ## Core Operating Principles
 
-1. **Search before writing**: call `search_documents` for existing topics, then use `search_keys` and `resolve_key` for reusable facts and passages. Never rewrite content that already exists.
-2. **Stop before duplicating a topic**: when `search_documents` reports high duplicate risk, stop before drafting and ask the user to choose reuse, update, variant, or an intentionally separate topic. Reuse the existing topic through the publication map whenever it already satisfies the need.
-3. **Reuse keys, not paths**: everything is addressed by namespaced key (`repo:key`), never by file path. Include shared passages by referencing their key.
-4. **Never invent factual variables**: product names, version numbers, URLs, and environment flags must be referenced via keyrefs — never guessed or hardcoded.
-5. **Use only verified source details**: only state behavior, UI labels, prerequisites, supported formats, and procedure steps supported by a cited source or verified existing documentation. Do not turn plausible assumptions into instructions.
-6. **Record provenance**: every new or updated document must cite what produced it in a frontmatter `sources:` list (plural — not `source:`) — one or more opaque IDs such as `commit:abc123`, `ticket:JIRA-42`, or a spec name/URL. This is what staleness tracking keys off; a document with no `sources:` entry, or the wrong field name, can never be flagged stale when its source changes.
-7. **Check before saving**: run every draft through `validate_draft` before writing the finished content locally — this already includes terminology checking. Use `check_terminology` on its own to check a smaller piece of text (before it's assembled into a full draft) for banned/avoid terms and their preferred replacements.
-8. **Save locally and stop**: after the checks pass, use native filesystem tools to create or update every required topic, map, navigation file, or manifest in the requested local output folder. Do not commit, push, open a pull request, or write through a hosted repository API unless the user separately and explicitly asks for that exact version-control action.
-9. **Name files descriptively**: file names must be kebab-case and derived from the topic's actual subject, matching this repository's existing convention (e.g. `configure-retention-policies.dita`, `knox-compatibility-matrix.md`) — never generic names like `overview.md`, `usage.md`, or `index.md` that say nothing about what the topic covers.
-10. **Look up ticket references yourself, don't trust a paraphrase**: Pelcrow has no access to any issue-tracker system (Jira, Linear, GitHub Issues, etc.) — if the task mentions a ticket ID that will end up in `sources:` as `ticket:ID`, and a ticket-tracker MCP server is also available to you in this session, search it directly for that ticket's actual current title, description, and status before drafting. A secondhand summary pasted into the conversation can be stale, incomplete, or wrong; the ticket itself is the source of truth you're citing.
-11. **Search for a ticket before assuming there isn't one**: if you're asked to draft something without a ticket ID being named, and a ticket-tracker MCP server is available, search it for anything that plausibly matches the topic before you start — don't just proceed source-less because none was handed to you. If you find a real candidate, confirm with the user which one (if any) applies before citing it; never guess an ID. If nothing plausible turns up, or no tracker is available, that's fine — `sources:` accepts `commit:`, `spec:`, or a URL just as well, and a ticket citation specifically is never mandatory.
+
 
 ## Repository and Write Boundary
 
@@ -35,6 +25,8 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 
 ## MDITA Authoring Syntax
 
+## MDITA Authoring Syntax
+
 - **Variable**: `<span data-keyref="repo:key"></span>` (optional literal fallback text inside the span).
 - **Block transclusion**: `<div data-conref="repo:key"></div>`; inline: `<span data-conref="repo:key"></span>`.
 - **Conditional content**: use standard `data-props`. Generic values are whitespace-separated, e.g. `<p data-props="cloud internal">…</p>`. When the condition dimension matters, preserve it with parenthesized groups, e.g. `<p data-props="platform(cloud) audience(admin)">…</p>`. Both forms are valid; do not invent plain `platform=`, `audience=`, or `product=` HTML attributes.
@@ -45,32 +37,20 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 ## Mandatory Metadata
 
 Every document's YAML frontmatter must set: title, owner, type, journeyStage, useCases, audience, platform.
-- `type`: required — one of concept | task | reference | troubleshooting. DITA topic type: concept (explanations/architecture), task (ordered procedures/how-tos), reference (APIs/schemas/tables), or troubleshooting (diagnosing and resolving a specific problem — condition, cause, and remedy).
-- `journeyStage`: required. Where in the customer journey this topic sits (e.g. Evaluate, Plan, Build, Maintain). The organization's stage names are managed on the Content Gaps page, not here — this field just carries the value per topic.
-- `useCases`: required. Which of the organization's defined use cases this topic covers (see the Content Gaps page). Drives the demand-side coverage matrix — a topic with no use case tag is invisible to it.
-The organization's current `journeyStage`/`useCases` values (with descriptions) live in `.pelcrow/config.json` under the `journeyStages`/`useCases` keys — read that file, or call the `get_journey_taxonomy` MCP tool if it's available, before setting either field. Never guess a value from its name alone; a value not in that list is invalid.
-The migration placeholders `title: Untitled Document` and `owner: unassigned` must be replaced before commit; the validation gate rejects them on strictly tracked files.
-Pelcrow system fields are fixed; organization fields are managed centrally in Settings. The effective list is not edited per-repo. `.pelcrow/config.json` in this repository is a **read-only synced copy** of it, kept here for visibility — regenerated from the source of truth on every push, so hand-editing it has no effect and any edits will be silently overwritten.
-**Don't quote frontmatter values.** Write YAML scalars bare — `title: Troubleshoot error code E-04 (lead impedance out of range)`, `owner: Documentation Author`, list items as `- ticket:DEMO-123` — never wrapped in `"` or `'`. Quote only when YAML syntax actually requires it: the value contains `: ` (colon-space) or ` #` (space-hash), begins with an indicator character (`- ? : , [ ] { } # & * ! | > ' " % @ \``), has meaningful leading or trailing whitespace, or is a string that would otherwise parse as a boolean, number, null, or date (`yes`, `1.20`, `null`, an ISO `YYYY-MM-DD` value). When in doubt leave it unquoted — malformed frontmatter is a hard validation failure, so a genuine need for quoting surfaces there.
-**Don't guess `owner`.** A person named in an email, ticket, or spec (reporter, requester, stakeholder) is not automatically the document's owner. Run `git config user.name` in the destination repository and use that non-empty local Git identity; if it is unavailable, ask the user. Never use Pelcrow, `pelcrow[bot]`, a server OS account, or the repository owner/organization as the document owner.
+- `type`: required — one of concept | task | reference | troubleshooting.
+- `journeyStage`: required. Where in the customer journey this topic sits.
+- `useCases`: required. Which of the organization's defined use cases this topic covers.
 
 ## Validation Gate (hard failures)
 
 - **Unresolved references**: every `data-keyref`/`data-conref` must resolve to an existing key definition.
 - **Duplicate definitions**: a key defined more than once in the global namespace is rejected.
 - **Transclusion cycles**: reuse loops (A → B → A) are forbidden.
-- **Missing metadata**: required frontmatter fields must be present (see Mandatory Metadata).
-- **Invalid metadata value**: metadata values with permitted options must match one of the allowed values.
-- **Malformed frontmatter**: YAML that fails to parse is rejected.
-- **Banned terminology**: any term in the organization's termbase is flagged with its preferred replacement.
-
-HTML elements inside fenced code blocks are treated as literal example code and are never indexed as live references.
-
-**This is not optional and it is not this document asking nicely.** Every commit to this repository — whether created by the user or another authorized workflow — is re-validated against these exact rules before it can merge. Calling `validate_draft`/`check_terminology` while drafting only changes when you find out about a problem, not whether it will be caught. Treat a hard failure here as equivalent to a failing test blocking a merge, because that is what it is.
+- **Missing metadata**: required frontmatter fields must be present.
 
 ## Pelcrow Repositories
 
-Valid repository IDs for Pelcrow tools and namespaced keys: `docs`, `pelcrow-testcases`.
+Valid repository IDs for Pelcrow tools and namespaced keys: `docs`, `lwdita-code-samples`, `pelcrow-testcases`.
 
 ## DITA-OT Operational Rules
 
