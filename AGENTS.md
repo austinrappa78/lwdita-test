@@ -7,11 +7,31 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 <!-- Generated deterministically by Pelcrow from the live content index. -->
 <!-- Do not edit inside this block: it is overwritten on every regeneration. -->
 
-## Core Operating Principles
+## Core Operating Principles by Repository Format
+
+### DITA (pelcrow-test-dita)
 
 
 
-## Repository and Write Boundary
+### MDITA (docs, lwdita-code-samples, pelcrow-testcases)
+
+
+
+## Repository and Write Boundary by Repository Format
+
+### DITA (pelcrow-test-dita)
+
+- **Destination repository**: the repository containing this `AGENTS.md` is the destination repository for authored content. Resolve every relative output path from this repository root, not from the location of an email, ticket export, specification, attachment, or other source document.
+- **Write boundary**: create or update documentation only inside this destination repository unless the user explicitly names a different destination repository. Before writing, resolve the proposed path and verify that it remains inside this repository; if it does not, stop and correct the path.
+- **External sources are read-only**: source material may live in Downloads, Documents, Jira, Confluence, another repository, or any other readable location. Reading a source never authorizes writing beside it, and its directory structure must never determine the output directory.
+- **Follow the destination structure**: inspect this repository's maps and existing content hierarchy before choosing a path. In a DITA repository that uses a `topics/` hierarchy, place new authored topics under the appropriate `topics/<subject>/` subfolder in this repository and register them in the matching map.
+- **Generated output is not source**: never read from, edit, or create authored content under the configured build-output directory (organization default: `out/`). Pelcrow excludes these directories from its content index and workspace.
+- **Keep provenance separate from placement**: cite external inputs in `sources:` metadata, but keep the authored document in the destination repository's content hierarchy.
+- **Local writes only by default**: write completed documents with native filesystem tools inside this repository’s local working tree. A documentation request does not authorize any remote repository mutation.
+- **Complete the local change**: if a topic also requires a map, navigation, manifest, or other supporting-file update, make every required local edit before claiming the content is ready for review.
+- **Leave Git to the user**: do not commit, push, open a pull request, or call a hosted write API unless the user separately and explicitly requests that exact action. Report the repository-relative paths changed so the user can review and check them in.
+
+### MDITA (docs, lwdita-code-samples, pelcrow-testcases)
 
 - **Destination repository**: the repository containing this `AGENTS.md` is the destination repository for authored content. Resolve every relative output path from this repository root, not from the location of an email, ticket export, specification, attachment, or other source document.
 - **Write boundary**: create or update documentation only inside this destination repository unless the user explicitly names a different destination repository. Before writing, resolve the proposed path and verify that it remains inside this repository; if it does not, stop and correct the path.
@@ -23,7 +43,19 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 - **Complete the local change**: if a topic also requires a map, navigation, manifest, or other supporting-file update, make every required local edit before claiming the content is ready for review.
 - **Leave Git to the user**: do not commit, push, open a pull request, or call a hosted write API unless the user separately and explicitly requests that exact action. Report the repository-relative paths changed so the user can review and check them in.
 
-## MDITA Authoring Syntax
+## Authoring Syntax by Repository Format
+
+### DITA (pelcrow-test-dita)
+
+## DITA XML Authoring Syntax
+
+- **Variable**: `<ph keyref="repo:key">fallback text</ph>`.
+- **Block transclusion**: `<p conkeyref="repo:target-key/element-id"/>` or `<step conkeyref="..."/>`.
+- **Conditional content**: use standard filtering attributes: `audience="admin"`, `platform="cloud"`, `product="..."`, or generic `props="..."`.
+- **Key definition**: define keys in the root publication map (`.ditamap`) using `<keydef keys="key-name" href="path/to/topic.dita"/>`.
+- **Valid XML Structure**: every topic file must have a single root element (`<concept>`, `<task>`, `<reference>`, or `<troubleshooting>`) adhering to DITA specifications. Call the `get_xml_schema` MCP tool to retrieve required child element hierarchies instead of guessing.
+
+### MDITA (docs, lwdita-code-samples, pelcrow-testcases)
 
 ## MDITA Authoring Syntax
 
@@ -34,7 +66,17 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 
 **Contiguous HTML constraint**: wrapping block tags (`data-props`, `data-conref`) and their contents must be authored as contiguous raw HTML with **no interior blank lines** after the opening tag or before the closing tag. Interior blank lines cause DITA-OT to split the element into un-paired siblings, letting conditional content silently escape filtering.
 
-## Mandatory Metadata
+## Mandatory Metadata by Repository Format
+
+### DITA (pelcrow-test-dita)
+
+DITA topics store metadata in `<prolog><metadata>`. Required properties (owner, journeyStage, useCases, etc.) should be stored as `<othermeta name="..." content="..."/>` elements.
+- `title`: required topic title in `<title>` element.
+- `owner`: `<othermeta name="owner" content="Author Name"/>`.
+- `journeyStage`: `<othermeta name="journeyStage" content="..."/>`.
+- `useCases`: `<othermeta name="useCases" content="..."/>`.
+
+### MDITA (docs, lwdita-code-samples, pelcrow-testcases)
 
 Every document's YAML frontmatter must set: title, owner, type, journeyStage, useCases, audience, platform.
 - `type`: required — one of concept | task | reference | troubleshooting.
@@ -43,14 +85,21 @@ Every document's YAML frontmatter must set: title, owner, type, journeyStage, us
 
 ## Validation Gate (hard failures)
 
-- **Unresolved references**: every `data-keyref`/`data-conref` must resolve to an existing key definition.
+- **Unresolved references**: every `data-keyref`/`data-conref` (MDITA) or `@keyref`/`@conkeyref` (DITA) must resolve to an existing key definition.
 - **Duplicate definitions**: a key defined more than once in the global namespace is rejected.
 - **Transclusion cycles**: reuse loops (A → B → A) are forbidden.
-- **Missing metadata**: required frontmatter fields must be present.
+- **Missing metadata**: required fields must be present (see Mandatory Metadata) — as frontmatter (MDITA) or `<prolog><metadata>` (DITA).
+- **Invalid metadata value**: metadata values with permitted options must match one of the allowed values.
+- **Malformed source**: YAML frontmatter that fails to parse (MDITA/Markdown), or XML that fails to parse (DITA/DocBook), is rejected.
+- **Banned terminology**: any term in the organization's termbase is flagged with its preferred replacement.
+
+HTML elements inside fenced code blocks are treated as literal example code and are never indexed as live references.
+
+**This is not optional and it is not this document asking nicely.** Every commit to this repository — whether created by the user or another authorized workflow — is re-validated against these exact rules before it can merge. Calling `validate_draft`/`check_terminology` while drafting only changes when you find out about a problem, not whether it will be caught. Treat a hard failure here as equivalent to a failing test blocking a merge, because that is what it is.
 
 ## Pelcrow Repositories
 
-Valid repository IDs for Pelcrow tools and namespaced keys: `docs`, `lwdita-code-samples`, `pelcrow-testcases`.
+Valid repository IDs for Pelcrow tools and namespaced keys: `docs`, `lwdita-code-samples`, `pelcrow-test-dita`, `pelcrow-testcases`.
 
 ## DITA-OT Operational Rules
 
