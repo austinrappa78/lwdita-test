@@ -59,10 +59,66 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 
 ## MDITA Authoring Syntax
 
-- **Variable**: `<span data-keyref="repo:key"></span>` (optional literal fallback text inside the span).
+### Maps and publication structure
+
+For a new LwDITA publication, prefer an `.mditamap` file. Use Markdown list links to define the topic order and nest list items to define the TOC hierarchy.
+
+Example:
+
+```markdown
+# Product documentation
+
+- [Introduction](introduction.md)
+- [Installation](installation.md)
+  - [System requirements](system-requirements.md)
+  - [Install the product](install.md)
+- [Configuration](configuration.md)
+```
+
+An existing XML `.ditamap` is also supported and can reference MDITA `.md` topics. If the project already uses a `.ditamap`, preserve that format and update its `<topicref>` structure. Do not convert between `.mditamap` and `.ditamap` unless the user explicitly requests it.
+
+Example:
+
+```xml
+<map>
+  <title>Product documentation</title>
+  <topicref href="introduction.md" format="mdita"/>
+  <topicref href="installation.md" format="mdita">
+    <topicref href="system-requirements.md" format="mdita"/>
+    <topicref href="install.md" format="mdita"/>
+  </topicref>
+  <topicref href="configuration.md" format="mdita"/>
+</map>
+```
+
+Use these rules:
+
+- New LwDITA map: prefer `.mditamap`.
+- Existing `.mditamap`: continue using `.mditamap`.
+- Existing `.ditamap`: continue using `.ditamap`.
+- MDITA topic referenced by XML: use `format="mdita"`.
+- Preserve the existing topic order, hierarchy, attributes, keys, metadata, and map references unless the task requires changing them.
+- Do not introduce YAML map declarations.
+- Do not place XML `<topicref>` markup inside an `.mditamap`.
+- Do not place Markdown list syntax inside a `.ditamap`.
+- Do not convert an XML `.bookmap` into an `.mditamap`. Bookmap is a full-DITA structure.
+
+### Variables in MDITA
+
+Use `[variable]` to insert a variable.
+
+Example:
+
+```markdown
+Welcome to [product-name].
+```
+
+Use variables already defined for the publication. Do not define variables inside an ordinary topic.
+
+- **XML `.ditamap` key definitions are map-scoped, never in the topic or its frontmatter**: for an existing full-DITA `.ditamap`, declared via `<keydef keys="key-name" href="topics/target.dita"/>` (or any `keys`-bearing `<topicref>`). Frontmatter (`id:`, singular `key:`, etc.) is document metadata, never a key registry on its own; `data-key` (singular) is not the specification's `data-keys` and is not a recognized key-definition mechanism.
+- **Key value (generate this form)**: `<topicmeta><keywords><keyword>Effective Value</keyword></keywords></topicmeta>` inside the `<keydef>` — Pelcrow's current generated standard for a pure variable, matching what Pelcrow's own Map Editor "Add Variable" UI writes. `<topicmeta><linktext>Effective Value</linktext></topicmeta>` is also a valid DITA effective-key-content representation (permitted as general fallback effective content, not only a link's display label) and Pelcrow reads it as a fallback, but do not generate it for a new pure variable — a future organization-level policy may select it as the enforced form instead. Both forms normalize to the same internal key/value semantics.
 - **Block transclusion**: `<div data-conref="repo:key"></div>`; inline: `<span data-conref="repo:key"></span>`.
 - **Conditional content**: use standard `data-props`. Generic values are whitespace-separated, e.g. `<p data-props="cloud internal">…</p>`. When the condition dimension matters, preserve it with parenthesized groups, e.g. `<p data-props="platform(cloud) audience(admin)">…</p>`. Both forms are valid; do not invent plain `platform=`, `audience=`, or `product=` HTML attributes.
-- **Key definition**: `<div data-key="key-name">shared content</div>`, or frontmatter `id:` / `keys:` entries.
 
 **Contiguous HTML constraint**: wrapping block tags (`data-props`, `data-conref`) and their contents must be authored as contiguous raw HTML with **no interior blank lines** after the opening tag or before the closing tag. Interior blank lines cause DITA-OT to split the element into un-paired siblings, letting conditional content silently escape filtering.
 
@@ -85,7 +141,7 @@ Every document's YAML frontmatter must set: title, owner, type, journeyStage, us
 
 ## Validation Gate (hard failures)
 
-- **Unresolved references**: every `data-keyref`/`data-conref` (MDITA) or `@keyref`/`@conkeyref` (DITA) must resolve to an existing key definition.
+- **Unresolved references**: every `[key-name]`/`data-keyref`/`data-conref` (MDITA) or `@keyref`/`@conkeyref` (DITA) must resolve to an existing key definition.
 - **Duplicate definitions**: a key defined more than once in the global namespace is rejected.
 - **Transclusion cycles**: reuse loops (A → B → A) are forbidden.
 - **Missing metadata**: required fields must be present (see Mandatory Metadata) — as frontmatter (MDITA) or `<prolog><metadata>` (DITA).
