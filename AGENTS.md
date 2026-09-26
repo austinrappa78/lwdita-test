@@ -13,7 +13,7 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 
 
 
-### MDITA (docs, lwdita-code-samples, pelcrow-testcases)
+### MDITA (azure-docs, docs, lwdita-code-samples, pelcrow-testcases)
 
 
 
@@ -31,7 +31,7 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 - **Complete the local change**: if a topic also requires a map, navigation, manifest, or other supporting-file update, make every required local edit before claiming the content is ready for review.
 - **Leave Git to the user**: do not commit, push, open a pull request, or call a hosted write API unless the user separately and explicitly requests that exact action. Report the repository-relative paths changed so the user can review and check them in.
 
-### MDITA (docs, lwdita-code-samples, pelcrow-testcases)
+### MDITA (azure-docs, docs, lwdita-code-samples, pelcrow-testcases)
 
 - **Destination repository**: the repository containing this `AGENTS.md` is the destination repository for authored content. Resolve every relative output path from this repository root, not from the location of an email, ticket export, specification, attachment, or other source document.
 - **Write boundary**: create or update documentation only inside this destination repository unless the user explicitly names a different destination repository. Before writing, resolve the proposed path and verify that it remains inside this repository; if it does not, stop and correct the path.
@@ -55,7 +55,7 @@ This repository is managed by **Pelcrow**, the reference desk and fact-checker f
 - **Key definition**: define keys in the root publication map (`.ditamap`) using `<keydef keys="key-name" href="path/to/topic.dita"/>`.
 - **Valid XML Structure**: every topic file must have a single root element (`<concept>`, `<task>`, `<reference>`, or `<troubleshooting>`) adhering to DITA specifications. Call the `get_xml_schema` MCP tool to retrieve required child element hierarchies instead of guessing.
 
-### MDITA (docs, lwdita-code-samples, pelcrow-testcases)
+### MDITA (azure-docs, docs, lwdita-code-samples, pelcrow-testcases)
 
 ## MDITA Authoring Syntax
 
@@ -132,7 +132,7 @@ DITA topics store metadata in `<prolog><metadata>`. Required properties (owner, 
 - `journeyStage`: `<othermeta name="journeyStage" content="..."/>`.
 - `useCases`: `<othermeta name="useCases" content="..."/>`.
 
-### MDITA (docs, lwdita-code-samples, pelcrow-testcases)
+### MDITA (azure-docs, docs, lwdita-code-samples, pelcrow-testcases)
 
 Every document's YAML frontmatter must set: title, owner, type, journeyStage, useCases, audience, platform.
 - `type`: required — one of concept | task | reference | troubleshooting.
@@ -155,7 +155,7 @@ HTML elements inside fenced code blocks are treated as literal example code and 
 
 ## Pelcrow Repositories
 
-Valid repository IDs for Pelcrow tools and namespaced keys: `docs`, `lwdita-code-samples`, `pelcrow-test-dita`, `pelcrow-testcases`.
+Valid repository IDs for Pelcrow tools and namespaced keys: `azure-docs`, `docs`, `lwdita-code-samples`, `pelcrow-test-dita`, `pelcrow-testcases`.
 
 ## DITA-OT Operational Rules
 
