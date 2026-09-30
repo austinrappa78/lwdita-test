@@ -174,6 +174,14 @@ Formatting source: https://learn.microsoft.com/en-us/contribute/content/text-for
 - **No entity corruption**: do not serialize Markdown punctuation as HTML entities unless the source intentionally contains an entity.
 
 
+## Publication Variable Files
+
+Add or update variable definitions only in the file named for that publication. Select the publication by its root map; do not create a second variables file.
+
+| Publication map | Variables file | Chosen from |
+| --- | --- | --- |
+| `admin-guide.ditamap` | `keys.ditamap` | existing definitions |
+
 ## Mandatory Metadata by Repository Format
 
 ### DITA (pelcrow-test-dita)
