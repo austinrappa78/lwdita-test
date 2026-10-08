@@ -94,6 +94,7 @@
       "source": "detected"
     }
   ],
+  "defaultPublicationDirectory": ".",
   "defaultTopicDirectory": "topics",
   "defaultImageDirectory": "images"
 }
