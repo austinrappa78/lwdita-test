@@ -100,14 +100,6 @@ Use variables already defined for the publication. Do not define variables insid
 
 **Contiguous HTML constraint**: wrapping block tags (`data-props`, `data-conref`) and their contents must be authored as contiguous raw HTML with **no interior blank lines** after the opening tag or before the closing tag. Interior blank lines cause DITA-OT to split the element into un-paired siblings, letting conditional content silently escape filtering.
 
-## Publication Variable Files
-
-Add or update variable definitions only in the file named for that publication. Select the publication by its root map; do not create a second variables file.
-
-| Publication map | Variables file | Chosen from |
-| --- | --- | --- |
-| `admin-guide.ditamap` | `keys.ditamap` | existing definitions |
-
 ## Mandatory Metadata
 
 Every document's YAML frontmatter must set: title, owner, type, journeyStage, useCases, audience, platform.
