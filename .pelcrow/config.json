@@ -84,7 +84,16 @@
   "useCases": [],
   "outputDirectory": "out",
   "documentationFormat": "mdita",
-  "publicationVariables": [],
+  "publicationVariables": [
+    {
+      "rootMap": "admin-guide.ditamap",
+      "format": "dita",
+      "file": "keys.ditamap",
+      "form": "keydef-map",
+      "variableCount": 3,
+      "source": "detected"
+    }
+  ],
   "defaultPublicationDirectory": ".",
   "defaultTopicDirectory": "topics",
   "defaultImageDirectory": "images"
