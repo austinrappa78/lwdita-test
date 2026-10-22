@@ -84,6 +84,52 @@
   "useCases": [],
   "outputDirectory": "out",
   "documentationFormat": "mdita",
+  "markdownProfile": {
+    "id": "mdita",
+    "version": "1",
+    "label": "Markdown / MDITA",
+    "lineage": [
+      {
+        "id": "commonmark",
+        "version": "1"
+      },
+      {
+        "id": "gfm",
+        "version": "1"
+      },
+      {
+        "id": "mdita",
+        "version": "1"
+      }
+    ],
+    "syntax": [
+      "commonmark",
+      "gfm",
+      "frontmatter",
+      "definition-list",
+      "alerts",
+      "mdita"
+    ],
+    "frontmatter": {
+      "accepted": [
+        "yaml"
+      ],
+      "defaultEncoding": "yaml"
+    },
+    "navigation": {
+      "type": "mditamap"
+    },
+    "metadata": {},
+    "mappings": [],
+    "components": {},
+    "rules": {
+      "markdownlint": "honor-repo-config",
+      "pelcrow": [],
+      "gate": []
+    },
+    "writingRules": "mdita",
+    "identity": "32b0776d19b0ba3ba59cbe3211e5a938de6d978184870b517a600c3cfadcaf66"
+  },
   "publicationVariables": [
     {
       "rootMap": "admin-guide.ditamap",
