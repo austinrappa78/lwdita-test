@@ -15,7 +15,7 @@ Treat the topic and supporting map edits as one change. Run validate_draft with 
 
 | Repository | Topic folder | Publication root folder | Content ref | New map format when absent |
 | --- | --- | --- | --- | --- |
-| `docs` | `topics` | `.` | provider working tree/default ref | native publication structure |
+| `docs` | `topics` | `.` | `main` | native publication structure |
 
 ## Core Operating Principles
 
@@ -135,7 +135,7 @@ Every document's YAML frontmatter must set: title, owner, type, journeyStage, us
 
 ## Pelcrow Repositories
 
-Valid repository IDs for Pelcrow tools, and for qualifying another project's key: `docs`, `lwdita-code-samples`, `pelcrow-test-dita`, `pelcrow-testcases`.
+Valid repository IDs for Pelcrow tools, and for qualifying another project's key: `docs`.
 
 ## DITA-OT Operational Rules
 
