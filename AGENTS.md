@@ -135,7 +135,7 @@ Every document's YAML frontmatter must set: title, owner, type, journeyStage, us
 
 ## Pelcrow Repositories
 
-Valid repository IDs for Pelcrow tools, and for qualifying another project's key: `docs`, `pelcrow-test-amazon-ec2-user-guide`.
+Valid repository IDs for Pelcrow tools, and for qualifying another project's key: `docs`, `lwdita-code-samples`, `pelcrow-test-amazon-ec2-user-guide`, `pelcrow-test-dita`, `pelcrow-testcases`.
 
 ## DITA-OT Operational Rules
 
