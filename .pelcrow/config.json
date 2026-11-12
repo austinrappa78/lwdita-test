@@ -92,13 +92,20 @@
         "id": "audience",
         "label": "Audience",
         "cardinality": "many"
+      },
+      {
+        "id": "subject",
+        "label": "Subject",
+        "cardinality": "one",
+        "parentDimensionId": "product"
       }
     ],
     "enabledDimensions": [
       "product",
       "version",
       "platform",
-      "audience"
+      "audience",
+      "subject"
     ],
     "hierarchies": [
       {
@@ -112,7 +119,8 @@
     ],
     "display": {
       "path": [
-        "product"
+        "product",
+        "subject"
       ],
       "qualifiers": [
         "version",
@@ -125,7 +133,8 @@
         "product": "product",
         "version": "version",
         "platform": "platform",
-        "audience": "audience"
+        "audience": "audience",
+        "subject": "subject"
       },
       "keyMetadataField": "fact-metadata",
       "attributeField": "attribute",
