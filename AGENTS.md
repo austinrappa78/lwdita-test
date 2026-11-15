@@ -3,7 +3,7 @@
 This repository is managed by **Pelcrow**, the reference desk and fact-checker for AI authoring agents.
 
 <!-- pelcrow:managed:start -->
-<!-- pelcrow:schema-version:sha256:1671d563b9542243 -->
+<!-- pelcrow:schema-version:sha256:f90a919c5243efbc -->
 <!-- Generated deterministically by Pelcrow from the live content index. -->
 <!-- Do not edit inside this block: it is overwritten on every regeneration. -->
 
