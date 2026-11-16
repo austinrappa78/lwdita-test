@@ -43,14 +43,14 @@
     },
     {
       "key": "audience",
-      "label": "Audience",
       "type": "string-list",
+      "label": "Audience",
       "required": true
     },
     {
       "key": "platform",
-      "label": "Platform",
       "type": "string",
+      "label": "Platform",
       "required": true
     }
   ],
